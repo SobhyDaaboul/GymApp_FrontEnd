@@ -3,22 +3,24 @@ import Logo from './Logo.png';
 
 function Login() {
     return (
-        <div class="card">
-        <div class="logo">
+        <div className='mainclass'>
+        <div className="card">
+        <div className="logo">
             <img src={Logo} alt="Logo"/>
         </div>
         <form>
-            <div class="form-group">
-                <label for="username">Username</label>
+            <div className="form-group">
+                <label htmlFor="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter your username"/>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
+            <div className="form-group">
+                <label htmlFor="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password"/>
             </div>
-            <button type="submit" class="login-button">Login</button>
+            <button type="submit" className="login-button">Login</button>
         </form>
-        <button class="create-account-button">Create New Account</button>
+        <button className="create-account-button">Create New Account</button>
+    </div>
     </div>
     );
 }
