@@ -13,6 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
 }
 
 .formclass {
@@ -20,29 +21,40 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  height: 400px;
+  width: 320px;
+  height: 470px;
 }
 
 .formclass div {
   margin-bottom: 15px;
 }
 
+.logo {
+  text-align: center; 
+}
+
+.logo img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: black;
+}
+
 .nameContainer {
   display: flex;
-  justify-content:space-evenly;
+  justify-content:center;
   margin-bottom: 10px;
   border-color: black;
 }
 
 .firstName{
   flex: 1; 
-  margin-right: 10px; 
+  margin-right: 5px; 
 }
 
 .lastName {
   flex: 1;
-  margin-right: 1px; 
+  margin-left: 5px; 
 }
 
 .number{
@@ -75,10 +87,12 @@ input[type="text"]:focus {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
   font-size: 16px;
+  margin: 0 auto; 
+  display: block;
 }
 
 .Submit-btn:hover {
-  background-color: #02ee0a;
+  background-color: #35ab02dd;
 }
