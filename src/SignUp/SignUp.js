@@ -4,7 +4,6 @@ import './SignUp.css';
 function SignUp(){
   return (
     <div class="mainclass">
-      <div class='imagebackground'></div>
       <form class="formclass">
       <div className="nameContainer">
           <div className="firstName">
