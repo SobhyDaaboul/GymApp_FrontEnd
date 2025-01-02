@@ -12,6 +12,14 @@ body {
   height: 100vh;
 }
 
+.imagebackground{
+  background-image: url('C:\Users\Admin\Desktop\GymApp\I3302_Part\gymapp\src\SignUp\gymbackground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
 .formclass {
   background-color: #ffffff;
   padding: 20px;
