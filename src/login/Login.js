@@ -10,8 +10,8 @@ function Login() {
         </div>
         <form>
             <div className="form-group">
-                <label htmlFor="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username"/>
+                <label htmlFor="EmailAddress">Email_Address</label>
+                <input type="text" id="emailaddress" name="EmailAddress" placeholder="Enter your email address"/>
             </div>
             <div className="form-group">
                 <label htmlFor="password">Password</label>
