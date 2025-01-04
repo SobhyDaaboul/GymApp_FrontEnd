@@ -1,4 +1,4 @@
-import './Login.css';
+import classes from './Login.css';
 import Logo from './Logo.png';
 
 function Login() {
