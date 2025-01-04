@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import './SignUp.css';
-import Logo from './Logo.png';
+import classes from './SignUp.module.css';
+import Logo from '../assets/icons/Logo.png';
 
 
 function SignUp(){
   const [phone, setPhone] = useState('+961');
   const [phoneError, setPhoneError] = useState(false); 
-  const [emailError,setEmailError]= useState(false);
 
   const handlePhoneChange = (e) => {
     const value = e.target.value;
@@ -23,26 +22,23 @@ function SignUp(){
     }
   };
 
-  const handleEmailError = (e)=>{ 
-  };
-
   return (
-    <div class="mainclass">
-      <form class="formclass">
-        <div class="logo">
+    <div className={classes.mainclass}>
+      <form className={classes.formclass}>
+        <div className={classes.logo}>
           <img src={Logo} alt="Logo"/>
-                </div>
-        <div className="nameContainer">
-            <div className="firstName">
+        </div>
+        <div className={classes.nameContainer}>
+            <div className={classes.firstName}>
               <label>First Name</label>
               <input type="text" placeholder='Enter Here'/>
             </div>
-            <div className="lastName">
+            <div className={classes.lastName}>
               <label>Last Name</label>
               <input type="text" placeholder='Enter Here'/>
             </div>
         </div>
-          <div class="Number"> 
+          <div className={classes.Number}> 
             <label>Phone Number</label>
             <input type="text"
                    value={phone} 
@@ -50,16 +46,16 @@ function SignUp(){
                    placeholder="only 8 number "
                    style={{ borderColor: phoneError ? 'red' : '' }} />
           </div>
-          <div class="Email">
+          <div className={classes.Email}>
             <label>Email</label>
             <input type="text" placeholder="test@example.com"/>
           </div>
-          <div class="Password">
+          <div className={classes.Password}>
             <label>Password</label>
             <input type="text" placeholder="yourpassword"/>
           </div>
           <div>
-            <button class="Submit-btn">SignUp</button>
+            <button className={classes.Submitbtn}>SignUp</button>
           </div>
       </form>
     </div>
