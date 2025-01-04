@@ -37,19 +37,19 @@ body {
     background-color: black;
 }
 
-.form-group {
+.formgroup {
     margin-bottom: 15px;
     text-align: left;
 }
 
-.form-group label {
+.formgroup label {
     display: block;
     font-size: 14px;
     color: #333;
     margin-bottom: 5px;
 }
 
-.form-group input {
+.formgroup input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -57,7 +57,7 @@ body {
     font-size: 14px;
 }
 
-.login-button {
+.loginbutton {
     width: 100%;
     padding: 10px;
     margin: 15px 0;
@@ -69,11 +69,11 @@ body {
     cursor: pointer;
 }
 
-.login-button:hover {
+.loginbutton:hover {
     background-color: #02ee0a;
 }
 
-.create-account-button {
+.createaccountbutton {
     width: 100%;
     padding: 10px;
     background-color: transparent;
@@ -84,7 +84,7 @@ body {
     cursor: pointer;
 }
 
-.create-account-button:hover {
+.createaccountbutton:hover {
     background-color: #02ee0a;
     color: #fff;
 }

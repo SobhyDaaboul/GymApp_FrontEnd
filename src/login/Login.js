@@ -1,25 +1,25 @@
 import './Login.css';
-import Logo from '../assets/icons/Logo.png';
+import Logo from './Logo.png';
 
 function Login() {
     return (
-        <div className='mainclass'>
-        <div className="card">
-        <div className="logo">
+        <div className={classes.mainclass}>
+        <div className={classes.card}>
+        <div className={classes.logo}>
             <img src={Logo} alt="Logo"/>
         </div>
         <form>
-            <div className="form-group">
+            <div className={classes.formgroup}>
                 <label htmlFor="EmailAddress">Email_Address</label>
                 <input type="text" id="emailaddress" name="EmailAddress" placeholder="Enter your email address"/>
             </div>
-            <div className="form-group">
+            <div className={classes.formgroup}>
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password"/>
             </div>
-            <button type="submit" className="login-button">Login</button>
+            <button type="submit" className={classes.loginbutton}>Login</button>
         </form>
-        <button className="create-account-button">Create New Account</button>
+        <button className={classes.createaccountbutton}>Create New Account</button>
     </div>
     </div>
     );
