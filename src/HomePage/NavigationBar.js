@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import classes from './NavigationBar.module.css';
-import Logo from "../assets/icons/Logo.png";
+import Logo from "../assets/icons/Logosmall.png";
 
 function NavigationBar(){
     return (
         <header className={classes.header}>
             <div className={classes.logo}>
-                <img src={Logo}/>
+                <img src={Logo} alt='Gym Logo'/>
             </div>
             <nav>
                 <ul>
