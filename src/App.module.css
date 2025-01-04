@@ -1,0 +1,19 @@
+/* Global styles for layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main app wrapper */
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* This will ensure the main content fills up the available space */
+.main-content {
+  flex-grow: 1; /* The main content will take the remaining space */
+}
