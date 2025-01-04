@@ -1,5 +1,5 @@
-import classes from './Login.css';
-import Logo from './Logo.png';
+import classes from './Login.module.css';
+import Logo from '../assets/icons/Logo.png';
 
 function Login() {
     return (
