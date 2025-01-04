@@ -1,11 +1,15 @@
 .carousel {
-  position: relative;
   overflow: hidden;
   width: 74%;
   height: 400px;
   border-radius: 13px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin: auto;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .carouselImages {

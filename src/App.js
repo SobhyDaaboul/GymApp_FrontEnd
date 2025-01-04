@@ -2,11 +2,11 @@ import React from 'react';
 import NavigationBar from './layout/NavigationBar'; 
 import MainPage from './layout/MainPage'; 
 import Footer from './layout/Footer'; 
-import './App.module.css';
+import classes from './App.module.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className={classes.App}>
       <NavigationBar/>  {/* Navigation bar */}
       <MainPage /> {/* Main content */}
       <Footer /> {/* Footer */}
