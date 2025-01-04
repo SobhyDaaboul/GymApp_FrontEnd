@@ -1,13 +1,11 @@
 import classes from './Footer.module.css';
-import Footerimage from "../assets/images/Footerimage.jpg";
+import Footerimage from '../assets/images/Footerimage.png';
 
 function Footer() {
     return (
-        <footer className={classes.footer}>
-            <div className={classes.footerimage}>
-                <img src={Footerimage} alt="Gym Footer"/>
+            <div className={classes.footer}>
+                <img src={Footerimage} alt="Gym Footer" className={classes.image}/>
             </div>
-        </footer>
     )
 }
 
