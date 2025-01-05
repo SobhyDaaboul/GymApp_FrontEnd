@@ -1,3 +1,10 @@
 .body{
   background-color: rgb(123, 123, 123);
 }
+
+.mainclass{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(204, 203, 203);
+}
