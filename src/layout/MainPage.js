@@ -5,7 +5,6 @@ import Carousel1 from '../assets/images/Carousel1.png';
 
 const imageUrls=[Carousel,Carousel1];
 
-
 function MainPage(){
   return(
     <div>
