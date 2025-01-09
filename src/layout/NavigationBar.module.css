@@ -4,38 +4,69 @@
 
 .header {
   width: 100%;
-  height : 7rem;
+  height: 7rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #000000;
   padding: 0 10%;
+  position: relative;
 }
 
-.logo{
+.logo {
   position: absolute;
   top: 10px;
   left: 50px;
 }
 
-.header ul{
+.header ul {
   display: flex;
-  margin:0;
-  padding-left: 470px;
-}
-.header li{
-  margin-left: 3rem;
-  list-style: none;
+  margin-left: 0rem;
+  padding: 0;
 }
 
-.header a {
+.navList {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin-left: 3rem;
+  position: relative;
+}
+
+.header a, .navLink {
   text-decoration: none;
   font-size: 1.5rem;
   color: #02ee0a;
+  cursor: pointer;
 }
 
-.header a:hover,
-.header a:active,
-.header a.active{
+.dropdownMenu {
+  position: absolute;
+  background-color: #333;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+}
+
+.dropdownItem {
+  padding: 10px 20px;
+}
+
+.dropdownItem a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #02ee0a;
+}
+
+.dropdownItem a:hover {
   color: white;
 }
