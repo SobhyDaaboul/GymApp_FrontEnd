@@ -1,5 +1,5 @@
-import classes from './Footer.module.css';
-import Footerimage from '../assets/images/Footerimage.png';
+import classes from '../../CSS/Footer.module.css';
+import Footerimage from '../../assets/images/Footerimage.png';
 
 function Footer() {
     return (

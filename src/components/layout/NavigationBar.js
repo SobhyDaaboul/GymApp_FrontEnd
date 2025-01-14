@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import classes from './NavigationBar.module.css';
-import Logo from "../assets/icons/Logosmall.png";
+import classes from '../../CSS/NavigationBar.module.css';
+import Logo from "../../assets/icons/Logosmall.png";
 import { useState } from 'react';
 
 function NavigationBar(){
