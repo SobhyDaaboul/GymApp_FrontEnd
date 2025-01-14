@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import classes from './SignUp.module.css';
-import Logo from '../assets/icons/Logo.png';
+import classes from '../../CSS/SignUpForm.module.css';
+import Logo from '../../assets/icons/Logo.png';
 
 
-function SignUp(){
+function SignUpForm(){
   const [phone, setPhone] = useState('+961');
   const [phoneError, setPhoneError] = useState(false); 
 
@@ -62,4 +62,4 @@ function SignUp(){
   );
 }
 
-export default SignUp;
+export default SignUpForm;
