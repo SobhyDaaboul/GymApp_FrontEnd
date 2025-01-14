@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import classes from "./AutoCarousel.module.css"; 
+import classes from "../UI/AutoCarousel"; 
 
 function AutoCarousel({ images, interval = 5000 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
