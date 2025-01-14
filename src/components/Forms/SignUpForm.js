@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import classes from 'components/Forms/SignUpForm.js'
-import Logo from '../assets/icons/Logo.png';
+import classes from '../../CSS/SignUpForm.module.css';
+import Logo from '../../assets/icons/Logo.png';
 
 
 function SignUpForm(){
