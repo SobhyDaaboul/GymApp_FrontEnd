@@ -1,10 +1,10 @@
 import React from 'react';
-import Layout from './layout/Layout';
+import LoginPage from './Pages/LoginPage';
 
 function App() {
   return (
     <div>
-    <Layout/>
+    <LoginPage/>
     </div>
   );
 }

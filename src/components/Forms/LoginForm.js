@@ -1,7 +1,7 @@
-import classes from './Login.module.css';
-import Logo from '../assets/icons/Logo.png';
+import classes from '../../CSS/LoginForm.module.css';
+import Logo from '../../assets/icons/Logo.png';
 
-function Login() {
+function LoginForm() {
     return (
         <div className={classes.mainclass}>
         <div className={classes.card}>
@@ -25,4 +25,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default LoginForm;
