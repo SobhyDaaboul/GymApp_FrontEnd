@@ -2,14 +2,19 @@ import React from "react";
 import { useEffect } from "react";
 import Layout from '../components/layout/Layout';
 import AutoCarousel from '../components/UI/AutoCarousel';
+import Card from "../components/UI/PopularClassesCard";
+import TrainerCard from '../components/UI/TrainerCard';
 import Carousel from '../assets/images/Carousel.png';
 import Carousel1 from '../assets/images/Carousel1.png';
 import styles from '../CSS/HomePage.module.css';
-import Card from "../components/UI/PopularClassesCard";
 import cardimage1 from '../assets/images/body combat.jpg';
 import cardimage2 from '../assets/images/yoga.png';
 import cardimage3 from '../assets/images/zumba.png';
+import image from '../assets/images/gymboy3.png';
 
+
+
+const trainerimage = image;
 const imageUrls=[Carousel,Carousel1];
 const cardsData = [
   {
@@ -63,6 +68,7 @@ function HomePage(){
             ))}
           </div>
         </div>
+        <TrainerCard image={trainerimage}/>
       </div>
     </Layout>
   );

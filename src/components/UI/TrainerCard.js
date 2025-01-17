@@ -1,8 +1,7 @@
 import React from 'react';
 import classes from '../../CSS/Trainer.module.css';
-import image from '../../assets/images/gymboy3.jpg';
 
-function TrainerCard() {
+function TrainerCard({image}) {
   return (
     <div className={classes.trainercard}>
       <img src={image} alt="Trainer" className={classes.trainerimage} />
