@@ -28,13 +28,3 @@
     grid-template-columns: 1fr; 
   }
 }
-
-.image-container {
-  position: relative;
-  border-color: black;
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-}

@@ -1,0 +1,43 @@
+.trainer-card {
+  display: flex; /* Use flexbox for side-by-side layout */
+  align-items: center; /* Align image and content vertically */
+  background-color: #fff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  padding: 20px; /* Add space inside the card */
+  margin: 20px 0; /* Add space between cards */
+}
+
+.trainer-image {
+  width: 200px; /* Set a fixed width for the image */
+  height: 200px; /* Set a fixed height for the image */
+  border-radius: 8px; /* Optional: rounded corners */
+  object-fit: cover; /* Ensure the image scales and crops properly */
+  margin-right: 20px; /* Space between image and content */
+}
+
+.trainer-content {
+  flex: 1; /* Allow content to take up the remaining space */
+}
+
+.trainer-name {
+  font-size: 1.5rem; /* Larger font for the name */
+  font-weight: bold; /* Bold text */
+  margin: 0 0 10px; /* Spacing below the name */
+  text-transform: uppercase; /* Make the name uppercase */
+}
+
+.trainer-name::after {
+  content: ''; /* Decorative underline */
+  display: block;
+  width: 50px; /* Length of the underline */
+  height: 2px; /* Thickness of the underline */
+  margin: 5px 0; /* Space above and below the underline */
+  background-color: #000; /* Black underline */
+}
+
+.trainer-description {
+  font-size: 1rem; /* Standard size for the description */
+  color: #666; /* Light gray color */
+  line-height: 1.6; /* Improve readability */
+}
