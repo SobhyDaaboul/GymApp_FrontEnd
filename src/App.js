@@ -21,6 +21,7 @@ function App() {
         <Route path="/MyWorkout" element={<MyWorkoutPage />} />
         <Route path="/PtSessions" element={<PtSessionsPage />} />
       </Routes>
+
   );
 }
 
