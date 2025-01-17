@@ -7,8 +7,7 @@ import ClassesPage from './Pages/ClassesPage';
 import MyWorkoutPage from './Pages/MyWorkOutPage';
 import PtSessionsPage from './Pages/PtSessionsPage';
 import MembershipCreationPage from './Pages/MembershipCreationPage';
-import HomePage from './Pages/HomePage';
-import Layout from './components/layout/Layout';
+
 
 
 function App() {
@@ -22,9 +21,6 @@ function App() {
         <Route path="/MyWorkout" element={<MyWorkoutPage />} />
         <Route path="/PtSessions" element={<PtSessionsPage />} />
       </Routes>
-    <Layout>
-    <HomePage/>
-    </Layout>
   );
 }
 
