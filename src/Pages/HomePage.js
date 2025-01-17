@@ -2,6 +2,9 @@ import React from "react";
 import { useEffect } from "react";
 import Layout from '../components/layout/Layout';
 import AutoCarousel from '../components/UI/AutoCarousel';
+import MovingText from "../components/UI/MovingText";
+import FeaturedPrograms from "../components/UI/FeaturedPrograms";
+import CTASection from "../components/UI/CTASection";
 import Card from "../components/UI/PopularClassesCard";
 import TrainerCard from '../components/UI/TrainerCard';
 import Carousel from '../assets/images/Carousel.png';
@@ -53,6 +56,7 @@ function HomePage(){
   return (
     <Layout>
         <div>
+        <MovingText/>
         <AutoCarousel images={imageUrls}/>
         <div className={styles['homepage-container']}>
         <h2 className={styles['homepage-heading']}>Popular Classes</h2>
@@ -68,6 +72,8 @@ function HomePage(){
             ))}
           </div>
         </div>
+        <CTASection/>
+        <FeaturedPrograms/>
         <TrainerCard image={trainerimage}/>
       </div>
     </Layout>

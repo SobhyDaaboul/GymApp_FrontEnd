@@ -40,33 +40,14 @@
 .header a, .navLink {
   text-decoration: none;
   font-size: 1.5rem;
-  color: #02ee0a;
+  color: #ffd700;
   cursor: pointer;
 }
 
-.dropdownMenu {
-  position: absolute;
-  background-color: #333;
-  padding: 10px 0;
-  margin: 0;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  min-width: 200px;
-  top: 100%;
-  left: 0;
-  z-index: 10;
+.header a:hover, .navLink:hover {
+  color: #ffed4a;
 }
 
-.dropdownItem {
-  padding: 10px 20px;
-}
 
-.dropdownItem a {
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: #02ee0a;
-}
 
-.dropdownItem a:hover {
-  color: white;
-}
+
