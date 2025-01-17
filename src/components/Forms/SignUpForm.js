@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import classes from '../../CSS/SignUpForm.module.css';
 import Logo from '../../assets/icons/Logo.png';
+import { Link } from 'react-router-dom';
 
 
 function SignUpForm(){
@@ -55,7 +56,9 @@ function SignUpForm(){
             <input type="text" placeholder="yourpassword"/>
           </div>
           <div>
+          <Link to='/HomePage'>
             <button className={classes.Submitbtn}>SignUp</button>
+          </Link>
           </div>
       </form>
     </div>
