@@ -18,41 +18,55 @@
     max-width: 40rem;
 }
 
-.control {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.control label {
-    font-size: 1.1rem;
-    font-weight: bold;
+.header {
+    font-size: 2rem;
     color: #000000;
-    margin-bottom: 5px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
 }
 
-.control input,
-.control textarea {
+.details {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.detailItem {
+    display: flex;
+    justify-content: space-between;
     padding: 12px;
-    font-size: 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    background-color: white;
-    transition: all 0.3s ease;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.control input:focus,
-.control textarea:focus {
-    border-color: #02ee0a;
-    box-shadow: 0 0 8px rgba(2, 238, 10, 0.2);
-    outline: none;
+.detailItem:last-child {
+    border-bottom: none;
+    font-weight: bold;
 }
 
-.control textarea {
-    resize: vertical;
-    min-height: 100px;
+.control.radioGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    gap: 2rem;
+}
+
+.radioOption {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.radioOption input[type="radio"] {
+    margin: 0;
+}
+
+.radioOption label {
+    margin: 0;
+    font-weight: bold;
 }
 
 .actions {
@@ -83,38 +97,29 @@
     box-shadow: 0 5px 15px rgba(53, 171, 2, 0.3);
 }
 
-.control input[id='Username'] {
-    font-size: 0.9rem;
-}
-
-.header {
-    font-size: 2rem;
-    color: #000000;
-    margin-bottom: 30px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.control.radioGroup {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.paymentDetails {
     width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
-    gap: 2rem;
+    margin-top: 20px;
 }
 
-.radioOption {
+.creditInputs {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 20px;
 }
 
-.radioOption input[type="radio"] {
-    margin: 0;
+.creditInputs input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
-.radioOption label {
-    margin: 0;
+.expectedDate {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #333;
 }
