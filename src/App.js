@@ -1,12 +1,13 @@
 import React from 'react';
-import LoginPage from './Pages/LoginPage';
+import HomePage from './Pages/HomePage';
+import Layout from './components/layout/Layout';
 
 
 function App() {
   return (
-    <div>
-    <LoginPage/>
-    </div>
+    <Layout>
+    <HomePage/>
+    </Layout>
   );
 }
 

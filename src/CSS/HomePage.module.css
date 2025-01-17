@@ -1,0 +1,29 @@
+.homepage-container {
+  padding: 20px;
+}
+
+.homepage-heading {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.homepage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 768px) {
+  .homepage-grid {
+    grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-grid {
+    grid-template-columns: 1fr; /* Adjust to 1 column on small screens */
+  }
+}
