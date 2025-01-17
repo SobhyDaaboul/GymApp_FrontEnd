@@ -11,7 +11,7 @@ function LoginForm() {
         </div>
         <form>
             <div className={classes.formgroup}>
-                <label htmlFor="EmailAddress">Email_Address</label>
+                <label htmlFor="EmailAddress">Email Address</label>
                 <input type="text" id="emailaddress" name="EmailAddress" placeholder="Enter your email address"/>
             </div>
             <div className={classes.formgroup}>
