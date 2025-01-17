@@ -19,7 +19,7 @@ function PaymentForm({ userData }) {
 
     const handleClose = () => {
         // Navigate to homepage
-        window.location.href = '/HomePage';
+        window.location.href = '/home-page';
     };
 
     const handleCreditPayment = (event) => {
@@ -27,7 +27,7 @@ function PaymentForm({ userData }) {
         // Process credit payment here
         console.log('Processing credit payment...');
         // Navigate to homepage
-        window.location.href = '/HomePage';
+        window.location.href = '/home-page';
     };
 
     const renderPaymentDetails = () => {
