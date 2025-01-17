@@ -32,15 +32,15 @@ function SignUpForm(){
         <div className={classes.nameContainer}>
             <div className={classes.firstName}>
               <label>First Name</label>
-              <input type="text" placeholder='Enter Here'/>
+              <input type="text" placeholder='First Name'/>
             </div>
             <div className={classes.lastName}>
               <label>Last Name</label>
-              <input type="text" placeholder='Enter Here'/>
+              <input type="text" placeholder='Last Name'/>
             </div>
         </div>
           <div className={classes.Number}> 
-            <label>Phone Number</label>
+            <label className={classes.phoneNumber}>Phone Number</label>
             <input type="text"
                    value={phone} 
                    onChange={handlePhoneChange} 
@@ -53,10 +53,10 @@ function SignUpForm(){
           </div>
           <div className={classes.Password}>
             <label>Password</label>
-            <input type="text" placeholder="yourpassword"/>
+            <input type="text" placeholder="Your Password"/>
           </div>
           <div>
-          <Link to='/HomePage'>
+          <Link to='/HomePage' className={classes.submitbtn}>
             <button className={classes.Submitbtn}>SignUp</button>
           </Link>
           </div>
