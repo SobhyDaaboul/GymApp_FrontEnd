@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 import Layout from '../components/layout/Layout';
 import AutoCarousel from '../components/UI/AutoCarousel';
 import MovingText from "../components/UI/MovingText";
