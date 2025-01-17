@@ -4,7 +4,7 @@ function MembershipCreationPage() {
     return (
         <Layout>
         <div>
-        <p> Hi </p>
+            <h1>Membership Creation Page</h1>
         </div>
         </Layout>
     );
