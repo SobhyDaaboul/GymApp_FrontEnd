@@ -1,0 +1,25 @@
+.movingTextContainer {
+  width: 100%;
+  height: 40px;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  margin-top: 0; /* Removed margin to place directly under navbar */
+}
+
+.movingText {
+  white-space: nowrap;
+  animation: moveText 20s linear infinite;
+  display: inline-block;
+  color: #333;
+  font-size: 1.2rem;
+  padding: 8px 0;
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} 

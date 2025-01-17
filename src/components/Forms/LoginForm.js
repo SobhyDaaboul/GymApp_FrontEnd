@@ -18,7 +18,7 @@ function LoginForm() {
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password"/>
             </div>
-            <Link to='/HomePage'>
+            <Link to='/home-page'>
             <button type="submit" className={classes.loginbutton}>Login</button>
             </Link>
         </form>

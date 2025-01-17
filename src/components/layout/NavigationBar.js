@@ -6,12 +6,14 @@ function NavigationBar(){
     return (
         <header className={classes.header}>
             <div className={classes.logo}>
+            <Link to='/home-page'  >
                 <img src={Logo} alt='Gym Logo'/>
+            </Link>
             </div>
             <nav>
                 <ul className={classes.navList}>
                     <li className={classes.navItem}>
-                        <Link to='/Create-Membership'>
+                        <Link to='/create-membership'>
                         <span className={classes.navLink}>Create Membership</span>
                         </Link>
                     </li>

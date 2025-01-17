@@ -54,13 +54,10 @@ function SignUpForm(){
             <label>Password</label>
             <input type="text" placeholder="Your Password"/>
           </div>
-          <div className={classes.buttonContainer}>
-            <Link to='/HomePage' className={classes.submitbtn}>
-              <button className={classes.Submitbtn}>SignUp</button>
-            </Link>
-            <Link to='/' className={classes.loginLink}>
-              <button className={classes.loginBtn}>Back to Login</button>
-            </Link>
+          <div>
+          <Link to='/home-page' className={classes.submitbtn}>
+            <button className={classes.Submitbtn}>SignUp</button>
+          </Link>
           </div>
       </form>
     </div>

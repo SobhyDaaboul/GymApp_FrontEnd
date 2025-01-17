@@ -1,0 +1,62 @@
+.programsSection {
+  padding: 4rem 2rem;
+  background: #f8f8f8;
+}
+
+.programsGrid {
+  display: flex;
+  flex-direction: row;
+  gap:2rem;
+ 
+  
+}
+ @media (max-width: 768px) {
+  .programsGrid {
+    flex-direction: column;
+  }
+}
+
+.programCard {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.programCard:hover {
+  transform: translateY(-10px);
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #ff4444;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  padding: 0.8rem 1.5rem;
+  background: #02ee0a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #02ee0a;
+} 
