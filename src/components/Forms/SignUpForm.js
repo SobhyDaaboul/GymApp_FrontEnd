@@ -44,7 +44,6 @@ function SignUpForm(){
             <input type="text"
                    value={phone} 
                    onChange={handlePhoneChange} 
-                   placeholder="only 8 number "
                    style={{ borderColor: phoneError ? 'red' : '' }} />
           </div>
           <div className={classes.Email}>
