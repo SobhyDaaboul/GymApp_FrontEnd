@@ -1,5 +1,6 @@
 import classes from '../../CSS/LoginForm.module.css';
 import Logo from '../../assets/icons/Logo.png';
+import { Link } from 'react-router-dom';
 
 function LoginForm() {
     return (
@@ -17,9 +18,13 @@ function LoginForm() {
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password"/>
             </div>
+            <Link to='/HomePage'>
             <button type="submit" className={classes.loginbutton}>Login</button>
+            </Link>
         </form>
+        <Link to='/SignUp'>
         <button className={classes.createaccountbutton}>Create New Account</button>
+        </Link>
     </div>
     </div>
     );
