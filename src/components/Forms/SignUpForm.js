@@ -55,7 +55,7 @@ function SignUpForm(){
             <input type="text" placeholder="Your Password"/>
           </div>
           <div>
-          <Link to='/HomePage' className={classes.submitbtn}>
+          <Link to='/home-page' className={classes.submitbtn}>
             <button className={classes.Submitbtn}>SignUp</button>
           </Link>
           </div>

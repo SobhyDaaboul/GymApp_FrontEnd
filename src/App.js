@@ -1,27 +1,23 @@
-import React from 'react';
-import {Routes, Route } from 'react-router-dom';
-import LoginPage from './Pages/LoginPage';
-import HomePage from './Pages/HomePage';
-import SignUpPage from './Pages/SignUpPage';
-import ClassesPage from './Pages/ClassesPage';
-import MyWorkoutPage from './Pages/MyWorkOutPage';
-import PtSessionsPage from './Pages/PtSessionsPage';
-import MembershipCreationPage from './Pages/MembershipCreationPage';
+import { Routes, Route } from 'react-router-dom';
+import { LoginPage, HomePage, SignUpPage,  ClassesPage, MyWorkoutPage,  PtSessionsPage, MembershipCreationPage} from './Pages';
 
-
+const routes = [
+  { path: '/', element: <LoginPage /> },
+  { path: '/SignUp', element: <SignUpPage /> },
+  { path: '/home-page', element: <HomePage /> },
+  { path: '/create-membership', element: <MembershipCreationPage /> },
+  { path: '/Classes', element: <ClassesPage /> },
+  { path: '/MyWorkout', element: <MyWorkoutPage /> },
+  { path: '/PtSessions', element: <PtSessionsPage /> },
+];
 
 function App() {
   return (
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/SignUp" element={<SignUpPage />} />
-        <Route path="/HomePage" element={<HomePage />} />
-        <Route path="/Create-Membership" element={<MembershipCreationPage />} />
-        <Route path="/Classes" element={<ClassesPage />} />
-        <Route path="/MyWorkout" element={<MyWorkoutPage />} />
-        <Route path="/PtSessions" element={<PtSessionsPage />} />
-      </Routes>
-
+    <Routes>
+      {routes.map((route, index) => (
+        <Route key={index} path={route.path} element={route.element} />
+      ))}
+    </Routes>
   );
 }
 
