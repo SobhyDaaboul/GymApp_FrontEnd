@@ -41,15 +41,11 @@
 .navLink {
   text-decoration: none;
   font-size: 1.5rem;
-  color: #ffd700;
+  color: #ffffff;
   cursor: pointer;
 }
 
 .header a:hover,
 .navLink:hover {
-  color: #ffed4a;
+  color: #45ffca;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
