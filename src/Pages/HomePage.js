@@ -74,7 +74,6 @@ function HomePage(){
         <CTASection/>
         <FeaturedPrograms/>
         <TrainerCard image={trainerimage}/>
-  
     </Layout>
   );
 }
