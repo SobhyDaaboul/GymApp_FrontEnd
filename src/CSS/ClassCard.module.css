@@ -1,4 +1,5 @@
 .cardContainer {
+<<<<<<< HEAD
   width: 90%;
   margin: 20px auto;
   padding: 25px;
@@ -18,6 +19,25 @@
 
 .cardContainer.expanded {
   min-height: 300px; /* Expanded height */
+=======
+    width: 90%;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    min-height: 80px;
+}
+
+.cardContainer.expanded {
+    min-height: 400px;
+>>>>>>> a87bb07f72990f8b2be6110facb891f159afc06b
 }
 
 .cardContainer:hover {
@@ -34,18 +54,33 @@
   opacity: 0.8;
 }
 
+.description {
+    margin-top: 15px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
 .cardHeader {
   text-align: center;
   margin-bottom: 25px;
 }
 
 .cardTitle {
+<<<<<<< HEAD
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 10px;
   color: #45ffca;
   margin: 0;
   transition: all 0.3s ease;
+=======
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #45ffca;
+    margin: 0;
+    transition: all 0.3s ease;
+>>>>>>> a87bb07f72990f8b2be6110facb891f159afc06b
 }
 
 .expanded .cardTitle {
@@ -63,6 +98,7 @@
 }
 
 .cardContent.show {
+<<<<<<< HEAD
   opacity: 1;
   max-height: 500px; /* Adjust based on your content */
   margin-top: 20px;
@@ -106,12 +142,25 @@
   font-size: 1.2rem;
 }
 
+=======
+    opacity: 1;
+    max-height: 500px;
+    margin-top: 20px;
+}
+
+>>>>>>> a87bb07f72990f8b2be6110facb891f159afc06b
 .scheduleInfo {
   flex: 1;
   padding: 20px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
   margin-right: 20px;
+}
+
+.detailItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .bookButton {
@@ -165,6 +214,7 @@
     gap: 20px;
   }
 
+<<<<<<< HEAD
   .cardImage {
     width: 100%;
     margin-bottom: 20px;
@@ -173,6 +223,12 @@
   .cardInfo {
     width: 100%;
   }
+=======
+    .scheduleInfo {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+>>>>>>> a87bb07f72990f8b2be6110facb891f159afc06b
 
   .scheduleInfo {
     margin-right: 0;
@@ -184,11 +240,14 @@
   }
 }
 
+<<<<<<< HEAD
 .transparent::before {
   opacity: 0.5;
   transition: opacity 0.3s ease;
 }
 
+=======
+>>>>>>> a87bb07f72990f8b2be6110facb891f159afc06b
 .popup {
   position: fixed;
   top: 50%;

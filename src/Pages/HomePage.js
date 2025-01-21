@@ -68,10 +68,10 @@ function HomePage() {
             />
           ))}
         </div>
+        <CTASection />
+        <FeaturedPrograms />
+        <TrainerCard image={trainerimage} />
       </div>
-      <CTASection />
-      <FeaturedPrograms />
-      <TrainerCard image={trainerimage} />
     </Layout>
   );
 }
