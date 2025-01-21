@@ -8,16 +8,14 @@
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    background-size: cover;
-    background-position: center;
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    min-height: 80px; /* Initial height when collapsed */
+    min-height: 80px;
 }
 
 .cardContainer.expanded {
-    min-height: 300px; /* Expanded height */
+    min-height: 400px;
 }
 
 .cardContainer:hover {
@@ -34,6 +32,13 @@
     opacity: 0.8;
 }
 
+.description {
+    margin-top: 15px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
 .cardHeader {
     text-align: center;
     margin-bottom: 25px;
@@ -42,7 +47,6 @@
 .cardTitle {
     font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 10px;
     color: #45ffca;
     margin: 0;
     transition: all 0.3s ease;
@@ -64,46 +68,8 @@
 
 .cardContent.show {
     opacity: 1;
-    max-height: 500px; /* Adjust based on your content */
+    max-height: 500px;
     margin-top: 20px;
-}
-
-.cardImage {
-    flex: 1;
-    min-width: 280px;
-    max-width: 400px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.cardInfo {
-    flex: 2;
-    min-width: 280px;
-}
-
-.cardDescription {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.cardDetails {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.detailItem {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.detailIcon {
-    color: #45ffca;
-    font-size: 1.2rem;
 }
 
 .scheduleInfo {
@@ -112,6 +78,12 @@
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     margin-right: 20px;
+}
+
+.detailItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .bookButton {
@@ -165,11 +137,6 @@
         gap: 20px;
     }
 
-    .cardImage {
-        width: 100%;
-        max-width: none;
-    }
-
     .scheduleInfo {
         margin-right: 0;
         margin-bottom: 20px;
@@ -178,11 +145,6 @@
     .bookButton {
         width: 100%;
     }
-}
-
-.transparent::before {
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
 }
 
 .popup {
