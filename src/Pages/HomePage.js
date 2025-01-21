@@ -1,47 +1,46 @@
 import { useEffect } from "react";
-import Layout from '../components/layout/Layout';
-import AutoCarousel from '../components/UI/AutoCarousel';
+import Layout from "../components/layout/Layout";
+import AutoCarousel from "../components/UI/AutoCarousel";
 import MovingText from "../components/UI/MovingText";
 import FeaturedPrograms from "../components/UI/FeaturedPrograms";
 import CTASection from "../components/UI/CTASection";
 import Card from "../components/UI/PopularClassesCard";
-import TrainerCard from '../components/UI/TrainerCard';
-import Carousel from '../assets/images/Carousel.png';
-import Carousel1 from '../assets/images/Carousel1.png';
-import styles from '../CSS/home-page.module.css';
-import cardimage1 from '../assets/images/body combat.jpg';
-import cardimage2 from '../assets/images/yoga.png';
-import cardimage3 from '../assets/images/zumba.png';
-import image from '../assets/images/gymboy3.png';
-
+import TrainerCard from "../components/UI/TrainerCard";
+import Carousel from "../assets/images/Carousel.png";
+import Carousel1 from "../assets/images/Carousel1.png";
+import classes from "../CSS/home-page.module.css";
+import cardimage1 from "../assets/images/body combat.jpg";
+import cardimage2 from "../assets/images/yoga.png";
+import cardimage3 from "../assets/images/zumba.png";
+import image from "../assets/images/gymboy3.png";
 
 const trainerimage = image;
-const imageUrls=[Carousel,Carousel1];
+const imageUrls = [Carousel, Carousel1];
 const cardsData = [
   {
     image: cardimage1,
-    time: '6 PM - 8 PM',
-    title: 'Body Combat',
+    time: "6 PM - 8 PM",
+    title: "Body Combat",
     description:
-      'BodyCombat is the empowering cardio workout where you are totally unleashed.',
+      "BodyCombat is the empowering cardio workout where you are totally unleashed.",
   },
   {
     image: cardimage2,
-    time: '10 AM - 11 AM',
-    title: 'Yoga Fitness',
+    time: "10 AM - 11 AM",
+    title: "Yoga Fitness",
     description:
-      'Whether you’re a regular yoga guru or just starting out with the basics.',
+      "Whether you're a regular yoga guru or just starting out with the basics.",
   },
   {
     image: cardimage3,
-    time: '4 PM - 6 PM',
-    title: 'Zumba Fitness',
+    time: "4 PM - 6 PM",
+    title: "Zumba Fitness",
     description:
-      'This is the activity that everyone’s been talking about. Fun and engaging!',
+      "This is the activity that everyone's been talking about. Fun and engaging!",
   },
 ];
 
-function HomePage(){
+function HomePage() {
   useEffect(() => {
     document.body.style.backgroundImage = "none";
     document.body.style.backgroundColor = "white";
@@ -51,15 +50,14 @@ function HomePage(){
       document.body.style.backgroundColor = "transparent";
     };
   }, []);
-  
+
   return (
     <Layout>
-     
-        <MovingText/>
-        <AutoCarousel images={imageUrls}/>
-        <div className={styles['home-page-container']}>
-        <h2 className={styles['home-page-heading']}>Popular Classes</h2>
-        <div className={styles['home-page']}>
+      <MovingText />
+      <AutoCarousel images={imageUrls} />
+      <div className={classes.homePageContainer}>
+        <h2 className={classes.homePageHeading}>Popular Classes</h2>
+        <div className={classes.homePage}>
           {cardsData.map((card, index) => (
             <Card
               key={index}
@@ -68,13 +66,12 @@ function HomePage(){
               title={card.title}
               description={card.description}
             />
-            ))}
-          </div>
+          ))}
         </div>
-        <CTASection/>
-        <FeaturedPrograms/>
-        <TrainerCard image={trainerimage}/>
-  
+      </div>
+      <CTASection />
+      <FeaturedPrograms />
+      <TrainerCard image={trainerimage} />
     </Layout>
   );
 }

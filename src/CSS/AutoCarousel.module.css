@@ -45,3 +45,13 @@
 .carouselControls span.active {
   background-color: black;
 }
+
+@media (max-width: 768px) {
+  .carousel {
+    height: calc(100vh - 120px); /* Adjusted for mobile nav */
+  }
+
+  .carouselImages img {
+    height: calc(100vh - 120px);
+  }
+}

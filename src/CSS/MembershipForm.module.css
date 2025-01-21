@@ -1,120 +1,140 @@
 .container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../assets/images/membershipbackground.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/images/membershipbackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .form {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 40rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 40rem;
 }
 
 .control {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 100%;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .control label {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #000000;
-    margin-bottom: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 5px;
 }
 
 .control input,
 .control textarea {
-    padding: 12px;
-    font-size: 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    background-color: white;
-    transition: all 0.3s ease;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: white;
+  transition: all 0.3s ease;
 }
 
 .control input:focus,
 .control textarea:focus {
-    border-color: #02ee0a;
-    box-shadow: 0 0 8px rgba(2, 238, 10, 0.2);
-    outline: none;
+  border-color: #02ee0a;
+  box-shadow: 0 0 8px rgba(2, 238, 10, 0.2);
+  outline: none;
 }
 
 .control textarea {
-    resize: vertical;
-    min-height: 100px;
+  resize: vertical;
+  min-height: 100px;
 }
 
 .actions {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .actions button {
-    background-color: #02ee0a;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    padding: 1rem 2.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  background-color: #02ee0a;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .actions button:hover {
-    background-color: #35ab02;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(53, 171, 2, 0.3);
+  background-color: #35ab02;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(53, 171, 2, 0.3);
 }
 
-.control input[id='Username'] {
-    font-size: 0.9rem;
+.control input[id="Username"] {
+  font-size: 0.9rem;
 }
 
 .header {
-    font-size: 2rem;
-    color: #000000;
-    margin-bottom: 30px;
-    font-weight: bold;
-    text-align: center;
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .control.radioGroup {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
-    gap: 2rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  gap: 2rem;
 }
 
 .radioOption {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .radioOption input[type="radio"] {
-    margin: 0;
+  margin: 0;
 }
 
 .radioOption label {
-    margin: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .form {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .header {
+    font-size: 1.5rem;
+  }
+
+  .control.radioGroup {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

@@ -1,131 +1,148 @@
 .container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../assets/images/membershipbackground.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 8px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/images/membershipbackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 8px;
 }
 
 .form {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 40rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 40rem;
 }
 
 .header {
-    font-size: 2rem;
-    color: #000000;
-    margin-bottom: 30px;
-    font-weight: bold;
-    text-align: center;
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .details {
-    width: 100%;
-    margin-bottom: 30px;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .detailItem {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px;
-    border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .detailItem:last-child {
-    border-bottom: none;
-    font-weight: bold;
+  border-bottom: none;
+  font-weight: bold;
 }
 
 .control.radioGroup {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
-    gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  gap: 2rem;
 }
 
 .radioOption {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .radioOption input[type="radio"] {
-    margin: 0;
+  margin: 0;
 }
 
 .radioOption label {
-    margin: 0;
-    font-weight: bold;
+  margin: 0;
+  font-weight: bold;
 }
 
 .actions {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .actions button {
-    background-color: #02ee0a;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    padding: 1rem 2.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  background-color: #02ee0a;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .actions button:hover {
-    background-color: #35ab02;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(53, 171, 2, 0.3);
+  background-color: #35ab02;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(53, 171, 2, 0.3);
 }
 
 .paymentDetails {
-    width: 100%;
-    margin-top: 20px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .creditInputs {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .creditInputs input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 .expectedDate {
-    text-align: center;
-    margin: 20px 0;
-    font-weight: bold;
-    color: #333;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .form {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .detailItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
