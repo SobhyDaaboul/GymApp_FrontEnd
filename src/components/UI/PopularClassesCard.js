@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from'../../CSS/Cards.module.css'; 
+import classes from'../../CSS/PopularCards.module.css'; 
 
 function Card({ image, time, title, description }) {
   return (

@@ -3,6 +3,8 @@ import classes from '../../CSS/PaymentForm.module.css';
 
 function PaymentForm({ userData }) {
     const [paymentMethod, setPaymentMethod] = useState('');
+    const [showCreditInvoice, setShowCreditInvoice] = useState(false);
+    const [creditCardNumber, setCreditCardNumber] = useState('');
     
     // Mock data (replace with actual data from your database)
     const membershipDetails = {
@@ -24,10 +26,8 @@ function PaymentForm({ userData }) {
 
     const handleCreditPayment = (event) => {
         event.preventDefault();
-        // Process credit payment here
-        console.log('Processing credit payment...');
-        // Navigate to homepage
-        window.location.href = '/home-page';
+        // Show invoice instead of direct navigation
+        setShowCreditInvoice(true);
     };
 
     const renderPaymentDetails = () => {
@@ -61,6 +61,37 @@ function PaymentForm({ userData }) {
                 </div>
             );
         } else if (paymentMethod === 'credit') {
+            if (showCreditInvoice) {
+                return (
+                    <div className={classes.paymentDetails}>
+                        <div className={classes.details}>
+                            <div className={classes.detailItem}>
+                                <span>User ID:</span>
+                                <span>{membershipDetails.userId}</span>
+                            </div>
+                            <div className={classes.detailItem}>
+                                <span>Username:</span>
+                                <span>{userData.username}</span>
+                            </div>
+                            <div className={classes.detailItem}>
+                                <span>Membership Type:</span>
+                                <span>{userData.membershipType}</span>
+                            </div>
+                            <div className={classes.detailItem}>
+                                <span>Total Cost:</span>
+                                <span>{membershipDetails.totalCost}</span>
+                            </div>
+                            <div className={classes.detailItem}>
+                                <span>Payment Method:</span>
+                                <span>Credit Card (**** {creditCardNumber.slice(-4)})</span>
+                            </div>
+                        </div>
+                        <div className={classes.actions}>
+                            <button type="button" onClick={handleClose}>Go Back to Home Page</button>
+                        </div>
+                    </div>
+                );
+            }
             return (
                 <div className={classes.paymentDetails}>
                     <div className={classes.creditInputs}>
@@ -68,6 +99,8 @@ function PaymentForm({ userData }) {
                             type="text"
                             placeholder="Credit Card Number"
                             maxLength="16"
+                            value={creditCardNumber}
+                            onChange={(e) => setCreditCardNumber(e.target.value)}
                         />
                         <input
                             type="text"

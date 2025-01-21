@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import classes from '../../CSS/ClassCard.module.css'; 
+import classes from '../../CSS/PtCard.module.css';
 
-function ClassCard(props){
+function PtCard(props) {
     const [isBooked, setIsBooked] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
 
     const handleBooking = (e) => {
-        e.stopPropagation(); // Prevent card from collapsing when booking
+        e.stopPropagation();
         setIsBooked(true);
         setShowPopup(true);
         
@@ -20,7 +20,7 @@ function ClassCard(props){
         setIsExpanded(!isExpanded);
     };
 
-    const cardClasses = `${classes.cardContainer} ${classes[props.classType]} 
+    const cardClasses = `${classes.cardContainer} 
         ${showPopup ? classes.transparent : ''} 
         ${isExpanded ? classes.expanded : ''}`;
 
@@ -28,25 +28,28 @@ function ClassCard(props){
         <div className={cardClasses} onClick={handleCardClick}>
             {showPopup && (
                 <div className={classes.popup}>
-                    Class Successfully Booked!
+                    Session Successfully Booked!
                 </div>
             )}
             <div className={classes.cardHeader}>
-                <h1 className={classes.cardTitle}>{props.title}</h1>
+                <h1 className={classes.cardTitle}>{props.name}</h1>
             </div>
             <div className={`${classes.cardContent} ${isExpanded ? classes.show : ''}`}>
                 <div className={classes.scheduleInfo}>
+                    <div className={classes.detailItem}>
+                        <i className="fas fa-phone"></i>
+                        <span>Phone: {props.phone}</span>
+                    </div>
                     <div className={classes.detailItem}>
                         <i className="far fa-clock"></i>
                         <span>Schedule: {props.schedule}</span>
                     </div>
                     <div className={classes.detailItem}>
-                        <i className="far fa-hourglass"></i>
-                        <span>Duration: {props.duration}</span>
-                    </div>
-                    <div className={classes.detailItem}>
                         <i className="fas fa-tag"></i>
-                        <span>Price: ${props.price}</span>
+                        <span>Rate: ${props.rate}/hour</span>
+                    </div>
+                    <div className={classes.description}>
+                        <p>{props.description}</p>
                     </div>
                 </div>
             </div>
@@ -56,11 +59,11 @@ function ClassCard(props){
                     onClick={handleBooking}
                     disabled={isBooked}
                 >
-                    {isBooked ? 'Booked' : 'Book Class'}
+                    {isBooked ? 'Booked' : 'Book Session'}
                 </button>
             </div>
         </div>
     );
 }
 
-export default ClassCard;
+export default PtCard;
