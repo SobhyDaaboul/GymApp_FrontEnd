@@ -10,4 +10,4 @@ function MovingText (){
   );
 };
 
-export default MovingText; 
+export default MovingText;

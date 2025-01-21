@@ -15,7 +15,6 @@ import cardimage3 from '../assets/images/zumba.png';
 import image from '../assets/images/gymboy3.png';
 
 
-
 const trainerimage = image;
 const imageUrls=[Carousel,Carousel1];
 const cardsData = [
