@@ -210,3 +210,23 @@
     position: relative;
     z-index: 2;
 }
+
+.withBackground {
+    position: relative;
+}
+
+.withBackground::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(45, 45, 45, 0.85));
+    z-index: 1;
+}
+
+.withBackground > * {
+    position: relative;
+    z-index: 2; /* This ensures the content stays above the overlay */
+}

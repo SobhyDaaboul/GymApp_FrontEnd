@@ -22,10 +22,19 @@ function ClassCard(props){
 
     const cardClasses = `${classes.cardContainer} ${classes[props.classType]} 
         ${showPopup ? classes.transparent : ''} 
-        ${isExpanded ? classes.expanded : ''}`;
+        ${isExpanded ? classes.expanded : ''}
+        ${isExpanded && props.backgroundImage ? classes.withBackground : ''}`;
 
     return (
-        <div className={cardClasses} onClick={handleCardClick}>
+        <div 
+            className={cardClasses} 
+            onClick={handleCardClick}
+            style={isExpanded && props.backgroundImage ? {
+                backgroundImage: `url(${props.backgroundImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+            } : {}}
+        >
             {showPopup && (
                 <div className={classes.popup}>
                     Class Successfully Booked!
