@@ -49,7 +49,7 @@
 
 .button {
   padding: 0.8rem 1.5rem;
-  background: #02ee0a;
+  background: #45ffca;
   color: white;
   border: none;
   border-radius: 5px;
@@ -58,7 +58,7 @@
 }
 
 .button:hover {
-  background: #02ee0a;
+  background: #45ffca;
 } 
 
 /* hi */

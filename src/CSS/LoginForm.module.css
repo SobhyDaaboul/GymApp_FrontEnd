@@ -62,7 +62,7 @@ body {
     width: 100%;
     padding: 10px;
     margin: 15px 0;
-    background-color: #02ee0a;
+    background-color: #45ffca;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -78,15 +78,15 @@ body {
     width: 100%;
     padding: 10px;
     background-color: transparent;
-    color: #02ee0a;
-    border: 2px solid #02ee0a;
+    color: #45ffca;
+    border: 2px solid #45ffca;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
 }
 
 .createaccountbutton:hover {
-    background-color: #02ee0a;
+    background-color: #45ffca;
     color: #fff;
 }
 
