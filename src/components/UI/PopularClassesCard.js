@@ -1,5 +1,5 @@
-import React from 'react';
-import classes from'../../CSS/PopularCards.module.css'; 
+import React from "react";
+import classes from "../../CSS/PopularClasses.module.css";
 
 function Card({ image, time, title, description }) {
   return (
@@ -12,7 +12,4 @@ function Card({ image, time, title, description }) {
   );
 }
 
-
 export default Card;
-
-
