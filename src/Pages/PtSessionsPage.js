@@ -27,9 +27,9 @@ function PtSessionsPage() {
                 image={pt2Image}
             />
             <PtCard 
-                name="Mike Williams"
-                phone="(555) 345-6789"
-                schedule="Tue-Sun: 9AM-5PM"
+                name="Sobhy Daaboul"
+                phone="(961) 71 62 96 55"
+                schedule="Tue-Sat: 9AM-5PM"
                 rate="70"
                 description="Former athlete specializing in sports-specific training and rehabilitation exercises."
                 image={pt3Image}
