@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function LoginForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(false);
 
   const handleEmailChange = (e) => {
     const emailValue = e.target.value;
     setEmail(emailValue);
-    setIsValidEmail(emailValue.includes('@') && emailValue.includes('.'));
+    setIsValidEmail(emailValue.includes("@") && emailValue.includes("."));
   };
 
   const handlePasswordChange = (e) => {
@@ -21,7 +21,7 @@ function LoginForm() {
     e.preventDefault();
     if (isValidEmail && password) {
       // Handle login logic here
-      console.log('Form submitted:', { email, password });
+      console.log({ Email: email, Password: password });
     }
   };
 
@@ -37,21 +37,23 @@ function LoginForm() {
               className={`${classes["input-box"]} ${classes.animation}`}
               style={{ "--i": 1, "--j": 22 }}
             >
-              <input 
-                type="email" 
+              <input
+                type="email"
                 required
                 value={email}
                 onChange={handleEmailChange}
-                style={{ borderColor: !isValidEmail && email ? 'red' : '' }}
+                style={{ borderColor: !isValidEmail && email ? "red" : "" }}
               />
               {!isValidEmail && email && (
-                <small style={{color: 'red'}}>Email must contain @ and .</small>
+                <small style={{ color: "red" }}>
+                  Email must contain @ and .
+                </small>
               )}
               <label>Email</label>
             </div>
             <div className={classes["input-box"]}>
-              <input 
-                type="password" 
+              <input
+                type="password"
                 required
                 value={password}
                 onChange={handlePasswordChange}
@@ -59,7 +61,11 @@ function LoginForm() {
               <label>Password</label>
             </div>
             <Link to="/home-page">
-              <button type="submit" className={classes.btn} disabled={!isValidEmail}>
+              <button
+                type="submit"
+                className={classes.btn}
+                disabled={!isValidEmail}
+              >
                 Login
               </button>
             </Link>
@@ -67,7 +73,7 @@ function LoginForm() {
               <p>
                 Don't have an account?
                 <Link to="/SignUp" className={classes["register-link"]}>
-                Register
+                  Register
                 </Link>
               </p>
             </div>
