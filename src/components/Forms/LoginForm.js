@@ -1,8 +1,30 @@
 import classes from "../../CSS/LoginForm.module.css";
-import { IonIcon } from "@ionic/react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function LoginForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isValidEmail, setIsValidEmail] = useState(false);
+
+  const handleEmailChange = (e) => {
+    const emailValue = e.target.value;
+    setEmail(emailValue);
+    setIsValidEmail(emailValue.includes('@') && emailValue.includes('.'));
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isValidEmail && password) {
+      // Handle login logic here
+      console.log('Form submitted:', { email, password });
+    }
+  };
+
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
@@ -10,26 +32,34 @@ function LoginForm() {
           <h2 className={classes.animation} style={{ "--i": 0, "--j": 21 }}>
             Login
           </h2>
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <div
               className={`${classes["input-box"]} ${classes.animation}`}
               style={{ "--i": 1, "--j": 22 }}
             >
-              <span className={classes.icon}>
-                <IonIcon name="mail"></IonIcon>
-              </span>
-              <input type="email" />
+              <input 
+                type="email" 
+                required
+                value={email}
+                onChange={handleEmailChange}
+                style={{ borderColor: !isValidEmail && email ? 'red' : '' }}
+              />
+              {!isValidEmail && email && (
+                <small style={{color: 'red'}}>Email must contain @ and .</small>
+              )}
               <label>Email</label>
             </div>
             <div className={classes["input-box"]}>
-              <span className={classes.icon}>
-                <IonIcon name="lock-closed"></IonIcon>
-              </span>
-              <input type="password" />
+              <input 
+                type="password" 
+                required
+                value={password}
+                onChange={handlePasswordChange}
+              />
               <label>Password</label>
             </div>
             <Link to="/home-page">
-              <button type="submit" className={classes.btn}>
+              <button type="submit" className={classes.btn} disabled={!isValidEmail}>
                 Login
               </button>
             </Link>
