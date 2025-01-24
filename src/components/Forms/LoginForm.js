@@ -1,8 +1,26 @@
 import classes from "../../CSS/LoginForm.module.css";
 import Logo from "../../assets/icons/Logo.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function LoginForm() {
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState(false);
+
+  const validateEmail = (email) => {
+    return (
+      email.includes("@") &&
+      email.includes(".") &&
+      email.indexOf("@") < email.lastIndexOf(".")
+    );
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+    setEmailError(!validateEmail(value));
+  };
+
   return (
     <div className={classes.mainclass}>
       <div className={classes.card}>
@@ -17,6 +35,9 @@ function LoginForm() {
               id="emailaddress"
               name="EmailAddress"
               placeholder="Enter your email address"
+              value={email}
+              onChange={handleEmailChange}
+              style={{ borderColor: emailError ? "red" : "" }}
             />
           </div>
           <div className={classes.formgroup}>

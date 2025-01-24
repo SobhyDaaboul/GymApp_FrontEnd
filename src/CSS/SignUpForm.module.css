@@ -18,19 +18,21 @@ body {
 
 .formclass {
   background-color: #ffffff;
-  padding: 30px 20px;
+  padding: 20px 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 400px;
   height: auto;
   min-height: 520px;
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  overflow-y: hidden;
 }
 
 .formclass div {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .logo {
@@ -38,8 +40,8 @@ body {
 }
 
 .logo img {
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background-color: black;
 }
@@ -79,7 +81,8 @@ label {
   text-align: center;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -88,19 +91,32 @@ input[type="text"] {
   text-align: center;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
   border-color: #45ffca;
   outline: none;
+}
+
+.Password {
+  position: relative;
+  margin-bottom: 25px !important;
+}
+
+.Password span {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 14px;
 }
 
 .buttonContainer {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   width: 100%;
-  margin-top: auto;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
+  padding-bottom: 5px;
 }
 
 .Submitbtn,
@@ -126,9 +142,21 @@ input[type="text"]:focus {
   background-color: #555;
 }
 
-.submitbtn,
-.loginLink {
+.submitbtn {
   text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+.submitbtn p {
+  color: #666;
+  margin-top: 15px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.submitbtn p:hover {
+  color: #45ffca;
 }
 
 .Submitbtn:hover {

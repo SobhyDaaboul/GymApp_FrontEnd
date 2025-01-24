@@ -139,6 +139,26 @@
     margin-top: 20px;
 }
 
+.timeSelection {
+    margin-right: 15px;
+}
+
+.timeSelect {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 2px solid #45ffca;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.timeSelect option {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
 @media (max-width: 768px) {
     .cardContainer {
         width: 95%;
@@ -161,6 +181,20 @@
     }
 
     .bookButton {
+        width: 100%;
+    }
+
+    .buttonWrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .timeSelection {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .timeSelect {
         width: 100%;
     }
 }
