@@ -1,13 +1,7 @@
 .footer {
   background-color: black;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   position: relative;
-}
-
-.image {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
 }

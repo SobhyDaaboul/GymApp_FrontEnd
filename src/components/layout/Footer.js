@@ -1,10 +1,26 @@
 import classes from '../../CSS/Footer.module.css';
-import Footerimage from '../../assets/images/Footerimage.png';
+import location from '../../assets/icons/location.png';
 
 function Footer() {
     return (
             <div className={classes.footer}>
-                <img src={Footerimage} alt="Gym Footer" className={classes.image}/>
+                <div className={classes.info}>
+                    <ul>
+                        <li>
+                        <img src={location} alt="location"/>
+                        <p>Beirut, Lebanon</p>
+                        </li>
+                        <li>
+                            
+                        </li>
+                        <li>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <div className={classes.quote}>
+
+                </div>
             </div>
     )
 }
