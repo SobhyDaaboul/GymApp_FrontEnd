@@ -71,7 +71,7 @@ body {
 }
 
 .loginbutton:hover {
-    background-color: #35ab02dd;
+    background-color: black;
 }
 
 .createaccountbutton {
@@ -89,5 +89,3 @@ body {
     background-color: #45ffca;
     color: #fff;
 }
-
-/* hi */

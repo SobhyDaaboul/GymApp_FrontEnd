@@ -46,7 +46,7 @@
 .control input:focus,
 .control textarea:focus {
     border-color: #45ffca;
-    box-shadow: 0 0 8px rgba(77, 167, 80, 0.2);
+    box-shadow: 0 0 8px rgba(44, 55, 45, 0.2);
     outline: none;
 }
 
@@ -80,7 +80,7 @@
 .actions button:hover {
     background-color: #000000;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(53, 171, 2, 0.3);
+    box-shadow: 0 5px 15px rgba(36, 39, 34, 0.3);
 }
 
 .control input[id='Username'] {

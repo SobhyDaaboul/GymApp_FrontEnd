@@ -4,7 +4,6 @@ function LoginPage() {
     return (
         <div>
             <LoginForm />
-            <p></p>
         </div>
     );
 }
