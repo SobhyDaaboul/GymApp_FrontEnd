@@ -20,7 +20,6 @@ function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isValidEmail && password) {
-      // Handle login logic here
       console.log({ Email: email, Password: password });
     }
   };
