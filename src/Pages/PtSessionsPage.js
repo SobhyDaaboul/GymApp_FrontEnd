@@ -19,7 +19,7 @@ function PtSessionsPage() {
                 image={pt1Image}
             />
             <PtCard 
-                name="Sarah Johnson"
+                name="Natasha Al Jamal"
                 phone="(555) 234-5678"
                 schedule="Mon-Sat: 7AM-3PM"
                 rate="75"
