@@ -1,7 +1,7 @@
 .trainercard {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background: linear-gradient(-45deg, #45ffca, #000000, #45ffca);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -16,6 +16,7 @@
 
 .trainercontent {
   flex: 1;
+  color: #ffffff;
 }
 
 .trainername {
@@ -32,12 +33,12 @@
   width: 50px;
   height: 2px;
   margin: 5px auto;
-  background-color: #000;
+  background-color: #ffffff;
 }
 
 .trainerdescription {
   font-size: 1rem;
-  color: #666;
+  color: #ffffff;
   line-height: 1.6;
 }
 

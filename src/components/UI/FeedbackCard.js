@@ -1,4 +1,4 @@
-import classes from '../../CSS/Trainer.module.css';
+import classes from '../../CSS/FeedbackCard.module.css';
 
 function TrainerCard({image}) {
   return (

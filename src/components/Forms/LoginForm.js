@@ -37,7 +37,7 @@ function LoginForm() {
               <p>
                 Don't have an account?
                 <Link to="/SignUp" className={classes["register-link"]}>
-                  Register
+                Register
                 </Link>
               </p>
             </div>

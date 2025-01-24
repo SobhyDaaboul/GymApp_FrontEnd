@@ -5,6 +5,11 @@
     padding: 2rem;
     background-color: #000000;
     color: #45ffca;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 
 .info {

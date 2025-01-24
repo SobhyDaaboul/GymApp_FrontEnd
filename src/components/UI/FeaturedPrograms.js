@@ -5,22 +5,18 @@ function FeaturedPrograms(){
     {
       icon: '💪',
       title: 'Personal Training',
-      description: 'Get personalized workout plans and one-on-one guidance from our expert trainers.',
-      buttonText: 'Learn More'
+      description: "Unleash your full potential with personalized training that gets results – build strength, shred fat, and transform your body today! Your journey to a stronger, healthier you starts here.",
+    },
+    {
+      icon: '🎯',
+      title: 'COMING SOON!',
+      description: "Exciting news! New gym classes are launching soon – from strength training to high-energy cardio, there's something for everyone. Stay tuned and get ready to crush your fitness goals!",
     },
     {
       icon: '👥',
       title: 'Group Classes',
-      description: 'Join our energetic group sessions including HIIT, Yoga, and Strength Training.',
-      buttonText: 'View Schedule'
+      description: "Push yourself and have fun with our new group classes! Train together, stay motivated, and achieve your fitness goals as a team. Join us and feel the energy!",
     },
-    {
-      icon: '🎯',
-      title: 'Specialized Programs',
-      description: 'Target specific goals with our specialized fitness and nutrition programs.',
-      buttonText: 'Explore'
-    },
-    
   ];
 
   return (
@@ -33,7 +29,6 @@ function FeaturedPrograms(){
             <p className={styles.description}>
               {program.description}
             </p>
-            <button className={styles.button}>{program.buttonText}</button>
           </div>
         ))}
       </div>

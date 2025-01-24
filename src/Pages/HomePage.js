@@ -4,7 +4,7 @@ import MovingText from "../components/UI/MovingText";
 import FeaturedPrograms from "../components/UI/FeaturedPrograms";
 import CTASection from "../components/UI/CTASection";
 import Card from "../components/UI/PopularClassesCard";
-import TrainerCard from "../components/UI/TrainerCard";
+import FeedbackCard from "../components/UI/FeedbackCard";
 import Carousel from "../assets/images/Carousel.png";
 import Carousel1 from "../assets/images/Carousel1.png";
 import classes from "../CSS/home-page.module.css";
@@ -60,7 +60,7 @@ function HomePage() {
       </div>
       <CTASection />
       <FeaturedPrograms />
-      <TrainerCard image={trainerimage} />
+      <FeedbackCard image={trainerimage} />
     </Layout>
   );
 }

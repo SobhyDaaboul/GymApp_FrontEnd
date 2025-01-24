@@ -8,6 +8,7 @@
   object-fit: cover; 
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  background: linear-gradient(-45deg, #45ffca, #000000, #45ffca);
 }
 
 .card:hover {
@@ -36,7 +37,7 @@
   font-weight: bold;
   margin: 10px 0;
   text-transform: uppercase;
-  color:#000;
+  color:#ffffff;
 }
 
 .cardtitle::after {
@@ -45,12 +46,12 @@
   width: 50px; 
   height: 2px; 
   margin: 10px auto;
-  background-color: #000; 
+  background-color: #ffffff; 
 }
 
 .carddescription {
   font-size: 0.9rem;
-  color: #666;
+  color: #ffffff;
   padding: 0 10px 20px;
   line-height: 1.6;
 }

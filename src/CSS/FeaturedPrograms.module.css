@@ -1,6 +1,5 @@
 .programsSection {
   padding: 4rem 2rem;
-  background: #f8f8f8;
 }
 
 .programsGrid {
@@ -17,6 +16,7 @@
 .programCard {
   background: white;
   border-radius: 10px;
+  border: 5px solid #45ffca;
   padding: 2rem;
   text-align: center;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -44,19 +44,3 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
-
-.button {
-  padding: 0.8rem 1.5rem;
-  background: #45ffca;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.button:hover {
-  background: #45ffca;
-}
-
-/* hi */
