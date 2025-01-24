@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import {
   LoginPage,
-  HomePage,
   SignUpPage,
+  HomePage,
   ClassesPage,
   MyWorkoutPage,
   PtSessionsPage,
@@ -11,8 +11,8 @@ import {
 
 const routes = [
   { path: "/", element: <LoginPage /> },
-  { path: "/SignUp", element: <SignUpPage /> },
   { path: "/home-page", element: <HomePage /> },
+  { path: "/SignUp", element: <SignUpPage /> },
   { path: "/create-membership", element: <MembershipCreationPage /> },
   { path: "/Classes", element: <ClassesPage /> },
   { path: "/MyWorkout", element: <MyWorkoutPage /> },
