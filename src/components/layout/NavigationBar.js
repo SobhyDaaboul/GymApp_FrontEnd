@@ -21,12 +21,12 @@ function NavigationBar() {
         </li>
         <li className={classes.navItem}>
           <Link className={classes.navLink} to="/MyWorkout">
-            MyWorkout
+            My Workout
           </Link>
         </li>
         <li className={classes.navItem}>
           <Link className={classes.navLink} to="/PtSessions">
-            PtSessions
+            PT Sessions
           </Link>
         </li>
       </ul>

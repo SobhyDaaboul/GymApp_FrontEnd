@@ -45,7 +45,7 @@ function HomePage() {
       <MovingText />
       <AutoCarousel images={imageUrls} />
       <div className={classes.homePageContainer}>
-        <h2 className={classes.homePageHeading}>Popular Classes</h2>
+        <h2 className={classes.homePageHeading}>{"{Popular Classes}"}</h2>
         <div className={classes.homePage}>
           {cardsData.map((card, index) => (
             <Card
