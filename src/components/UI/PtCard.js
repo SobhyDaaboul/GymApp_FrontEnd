@@ -35,6 +35,13 @@ function PtCard(props) {
                 <h1 className={classes.cardTitle}>{props.name}</h1>
             </div>
             <div className={`${classes.cardContent} ${isExpanded ? classes.show : ''}`}>
+                <div className={classes.imageContainer}>
+                    <img 
+                        src={props.image} 
+                        alt={props.name} 
+                        className={classes.profileImage}
+                    />
+                </div>
                 <div className={classes.scheduleInfo}>
                     <div className={classes.detailItem}>
                         <i className="fas fa-phone"></i>

@@ -6,11 +6,9 @@
 .programsGrid {
   display: flex;
   flex-direction: row;
-  gap:2rem;
- 
-  
+  gap: 2rem;
 }
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .programsGrid {
     flex-direction: column;
   }
@@ -21,7 +19,7 @@
   border-radius: 10px;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -31,7 +29,7 @@
 
 .icon {
   font-size: 2.5rem;
-  color: #ff4444;
+  color: #45ffca;
   margin-bottom: 1rem;
 }
 
@@ -49,7 +47,7 @@
 
 .button {
   padding: 0.8rem 1.5rem;
-  background: #02ee0a;
+  background: #45ffca;
   color: white;
   border: none;
   border-radius: 5px;
@@ -58,7 +56,7 @@
 }
 
 .button:hover {
-  background: #02ee0a;
-} 
+  background: #45ffca;
+}
 
 /* hi */

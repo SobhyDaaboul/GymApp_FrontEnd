@@ -83,7 +83,7 @@
 }
 
 .actions button {
-  background-color: #02ee0a;
+  background-color: #45ffca;
   color: white;
   font-size: 1.1rem;
   font-weight: bold;
@@ -98,9 +98,9 @@
 }
 
 .actions button:hover {
-  background-color: #35ab02;
+  background-color: black;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(53, 171, 2, 0.3);
+  box-shadow: 0 5px 15px rgba(57, 66, 53, 0.3);
 }
 
 .paymentDetails {

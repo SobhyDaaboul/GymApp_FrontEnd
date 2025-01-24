@@ -96,13 +96,13 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(69, 255, 202, 0.2);
+  box-shadow: 0 4px 15px rgba(44, 52, 50, 0.2);
   margin-top: 15px;
 }
 
 .bookButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(69, 255, 202, 0.3);
+  box-shadow: 0 6px 20px rgba(33, 40, 38, 0.3);
   background: linear-gradient(135deg, #7bffd9 0%, #45ffca 100%);
 }
 
@@ -165,7 +165,7 @@
   font-weight: 600;
   z-index: 1000;
   animation: fadeInOut 3s ease;
-  box-shadow: 0 4px 15px rgba(69, 255, 202, 0.3);
+  box-shadow: 0 4px 15px rgba(46, 54, 52, 0.3);
 }
 
 .booked {
@@ -214,4 +214,24 @@
 .cardContainer > * {
   position: relative;
   z-index: 2;
+}
+
+.withBackground {
+  position: relative;
+}
+
+.withBackground::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(45, 45, 45, 0.85));
+  z-index: 1;
+}
+
+.withBackground > * {
+  position: relative;
+  z-index: 2; /* This ensures the content stays above the overlay */
 }

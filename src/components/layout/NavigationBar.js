@@ -11,20 +11,29 @@ function NavigationBar() {
         </Link>
       </div>
       <nav>
-        <ul>
-          <li>
-            <Link to="/create-membership">Create Membership</Link>
+        <ul className={classes.navList}>
+          <li className={classes.navItem}>
+            <Link className={classes.navLink} to="/create-membership">
+              Create Membership
+            </Link>
           </li>
-          <li>
-            <Link to="/Classes">Classes</Link>
+          <li className={classes.navItem}>
+            <Link className={classes.navLink} to="/Classes">
+              Classes
+            </Link>
           </li>
-          <li>
-            <Link to="/MyWorkout">MyWorkout</Link>
+          <li className={classes.navItem}>
+            <Link className={classes.navLink} to="/MyWorkout">
+              MyWorkout
+            </Link>
           </li>
-          <li>
-            <Link to="/PtSessions">PtSessions</Link>
+          <li className={classes.navItem}>
+            <Link className={classes.navLink} to="/PtSessions">
+              PtSessions
+            </Link>
           </li>
         </ul>
+        <button className={classes.NavSignUp}>SignUp</button>
       </nav>
     </header>
   );
