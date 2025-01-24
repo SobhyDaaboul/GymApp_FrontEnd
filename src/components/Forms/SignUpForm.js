@@ -95,9 +95,11 @@ function SignUpForm() {
                 <p style={{ color: "red" }}>{errors.password}</p>
               )}
             </div>
+            <Link to='/home-page'>
             <button type="submit" className={classes.btn}>
               Register
             </button>
+            </Link>
             <div className={classes["login-register"]}>
               <p>
                 Already have an account?{" "}
