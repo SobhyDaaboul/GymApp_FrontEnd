@@ -1,65 +1,48 @@
 import classes from "../../CSS/LoginForm.module.css";
-import Logo from "../../assets/icons/Logo.png";
+import { IonIcon } from "@ionic/react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [emailError, setEmailError] = useState(false);
-
-  const validateEmail = (email) => {
-    return (
-      email.includes("@") &&
-      email.includes(".") &&
-      email.indexOf("@") < email.lastIndexOf(".")
-    );
-  };
-
-  const handleEmailChange = (e) => {
-    const value = e.target.value;
-    setEmail(value);
-    setEmailError(!validateEmail(value));
-  };
-
   return (
-    <div className={classes.mainclass}>
-      <div className={classes.card}>
-        <div className={classes.logo}>
-          <img src={Logo} alt="Logo" />
+    <div className={classes.container}>
+      <div className={classes.wrapper}>
+        <div className={classes["form-box"]}>
+          <h2 className={classes.animation} style={{ "--i": 0, "--j": 21 }}>
+            Login
+          </h2>
+          <form action="">
+            <div
+              className={`${classes["input-box"]} ${classes.animation}`}
+              style={{ "--i": 1, "--j": 22 }}
+            >
+              <span className={classes.icon}>
+                <IonIcon name="mail"></IonIcon>
+              </span>
+              <input type="email" />
+              <label>Email</label>
+            </div>
+            <div className={classes["input-box"]}>
+              <span className={classes.icon}>
+                <IonIcon name="lock-closed"></IonIcon>
+              </span>
+              <input type="password" />
+              <label>Password</label>
+            </div>
+            <Link to="/home-page">
+              <button type="submit" className={classes.btn}>
+                Login
+              </button>
+            </Link>
+            <div className={classes["login-register"]}>
+              <p>
+                Don't have an account?
+                <Link to="/SignUp" className={classes["register-link"]}>
+                  Register
+                </Link>
+              </p>
+            </div>
+          </form>
         </div>
-        <form>
-          <div className={classes.formgroup}>
-            <label htmlFor="EmailAddress">Email Address</label>
-            <input
-              type="text"
-              id="emailaddress"
-              name="EmailAddress"
-              placeholder="Enter your email address"
-              value={email}
-              onChange={handleEmailChange}
-              style={{ borderColor: emailError ? "red" : "" }}
-            />
-          </div>
-          <div className={classes.formgroup}>
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-            />
-          </div>
-          <Link to="/home-page">
-            <button type="submit" className={classes.loginbutton}>
-              Login
-            </button>
-          </Link>
-        </form>
-        <Link to="/SignUp">
-          <button className={classes.createaccountbutton}>
-            Create New Account
-          </button>
-        </Link>
       </div>
     </div>
   );

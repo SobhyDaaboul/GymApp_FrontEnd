@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Layout from "../components/layout/Layout";
 import AutoCarousel from "../components/UI/AutoCarousel";
 import MovingText from "../components/UI/MovingText";
@@ -41,16 +40,6 @@ const cardsData = [
 ];
 
 function HomePage() {
-  useEffect(() => {
-    document.body.style.backgroundImage = "none";
-    document.body.style.backgroundColor = "white";
-
-    return () => {
-      document.body.style.backgroundImage = "url('/path-to-your-image.jpg')";
-      document.body.style.backgroundColor = "transparent";
-    };
-  }, []);
-
   return (
     <Layout>
       <MovingText />

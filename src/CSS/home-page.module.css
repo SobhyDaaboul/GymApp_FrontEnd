@@ -8,6 +8,7 @@
   font-size: 1.8rem;
   font-weight: bold;
   font-style: italic;
+  color: #45ffca;
 }
 
 .homePage {
@@ -18,9 +19,7 @@
 }
 
 @media (max-width: 768px) {
-  .homePage{
-  flex-direction: column;
+  .homePage {
+    flex-direction: column;
   }
 }
-
- 
