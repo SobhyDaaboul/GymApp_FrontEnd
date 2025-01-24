@@ -1,8 +1,8 @@
-.home-page-container {
+.homePageContainer {
   padding: 20px;
 }
 
-.home-page-heading {
+.homePageHeading {
   text-align: center;
   margin-bottom: 20px;
   font-size: 1.8rem;
@@ -10,7 +10,7 @@
   font-style: italic;
 }
 
-.home-page {
+.homePage {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -18,7 +18,7 @@
 }
 
 @media (max-width: 768px) {
-  .home-page{
+  .homePage{
   flex-direction: column;
   }
 }

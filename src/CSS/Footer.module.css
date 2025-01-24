@@ -1,7 +1,66 @@
 .footer {
-  background-color: black;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #000000;
+    color: #45ffca;
+}
+
+.info {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.infoList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infoList li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 1.2rem;
+}
+
+.infoList img {
+    width: 24px;
+    height: 24px;
+}
+
+.quote {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.quote p {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+
+.animatedLine {
+    width: 80%;
+    height: 2px;
+    margin: 1rem 0;
+    background-color: #45ffca;
+    animation: colorChange 2s infinite alternate;
+}
+
+@keyframes colorChange {
+    from {
+        background-color: #45ffca;
+    }
+    to {
+        background-color: #000000;
+    }
 }
