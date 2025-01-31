@@ -10,8 +10,8 @@ import {
 } from "./Pages";
 
 const routes = [
-  { path: "/", element: <LoginPage /> },
-  { path: "/home-page", element: <HomePage /> },
+  { path: "/", element: <HomePage /> },
+  { path: "/Login", element: <LoginPage /> },
   { path: "/SignUp", element: <SignUpPage /> },
   { path: "/create-membership", element: <MembershipCreationPage /> },
   { path: "/Classes", element: <ClassesPage /> },

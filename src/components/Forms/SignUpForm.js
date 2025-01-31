@@ -85,7 +85,7 @@ function SignUpForm() {
                 <p style={{ color: "red" }}>{errors.password}</p>
               )}
             </div>
-            <Link to="/home-page">
+            <Link to="/">
               <button type="submit" className={classes.btn}>
                 Register
               </button>
@@ -93,7 +93,7 @@ function SignUpForm() {
             <div className={classes["login-register"]}>
               <p>
                 Already have an account?{" "}
-                <Link to="/" className={classes["login-link"]}>
+                <Link to="/Login" className={classes["login-link"]}>
                   Login
                 </Link>
               </p>
