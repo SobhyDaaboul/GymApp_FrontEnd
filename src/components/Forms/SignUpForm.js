@@ -1,7 +1,6 @@
 import classes from "../../CSS/SignUpForm.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { IonIcon } from "@ionic/react";
 
 function SignUpForm() {
   const [username, setUsername] = useState("");
@@ -56,9 +55,6 @@ function SignUpForm() {
           <h2>Registration</h2>
           <form onSubmit={handleSubmit}>
             <div className={classes["input-box"]}>
-              <span className={classes.icon}>
-                <IonIcon name="person"></IonIcon>
-              </span>
               <input
                 type="text"
                 value={username}
@@ -70,9 +66,6 @@ function SignUpForm() {
               )}
             </div>
             <div className={classes["input-box"]}>
-              <span className={classes.icon}>
-                <IonIcon name="mail"></IonIcon>
-              </span>
               <input
                 type="email"
                 value={email}
@@ -82,9 +75,6 @@ function SignUpForm() {
               {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
             </div>
             <div className={classes["input-box"]}>
-              <span className={classes.icon}>
-                <IonIcon name="lock-closed"></IonIcon>
-              </span>
               <input
                 type="password"
                 value={password}
@@ -95,10 +85,10 @@ function SignUpForm() {
                 <p style={{ color: "red" }}>{errors.password}</p>
               )}
             </div>
-            <Link to='/home-page'>
-            <button type="submit" className={classes.btn}>
-              Register
-            </button>
+            <Link to="/home-page">
+              <button type="submit" className={classes.btn}>
+                Register
+              </button>
             </Link>
             <div className={classes["login-register"]}>
               <p>
