@@ -6,10 +6,32 @@ import spinningImage from "../assets/images/spinningclass.jpg";
 import powerYogaImage from "../assets/images/poweryogaclass.jpg";
 import hiitTrainingImage from "../assets/images/hiittrainingclass.jpg";
 import pilatesReformerImage from "../assets/images/pilatesreformerclass.jpg";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function ClassesPage() {
+  const [classes, setClasses] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/classes")
+      .then((response) => setClasses(response.data))
+      .catch((error) => console.error("Error fetching classes:", error));
+  }, []);
+
   return (
     <Layout>
+      {classes.map((classItem) => (
+        <ClassCard
+          key={classItem.id}
+          title={classItem.name}
+          schedule={classItem.schedule}
+          duration={classItem.duration}
+          price={classItem.price}
+          backgroundImage={classItem.image}
+        />
+      ))}
+
       <ClassCard
         title="Body Combat"
         schedule="Mon, Wed - 10:00 AM"
