@@ -59,7 +59,7 @@ function LoginForm() {
               />
               <label>Password</label>
             </div>
-            <Link to="/home-page">
+            <Link to="/">
               <button
                 type="submit"
                 className={classes.btn}

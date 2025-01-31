@@ -14,7 +14,7 @@ function ClassesPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/classes")
+      .get("http://localhost:3000/gymapp/class")
       .then((response) => setClasses(response.data))
       .catch((error) => console.error("Error fetching classes:", error));
   }, []);
