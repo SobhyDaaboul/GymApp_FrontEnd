@@ -19,7 +19,7 @@ function PtSessionsPage() {
                 image={pt1Image}
             />
             <PtCard 
-                name="Natasha Al Jamal"
+                name="Natasha The Beauty"
                 phone="(555) 234-5678"
                 schedule="Mon-Sat: 7AM-3PM"
                 rate="75"

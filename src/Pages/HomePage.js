@@ -18,21 +18,21 @@ const imageUrls = [Carousel, Carousel1];
 const cardsData = [
   {
     image: cardimage1,
-    time: "6 PM - 8 PM",
+    time: "MON-WED, 10AM",
     title: "Body Combat",
     description:
       "BodyCombat is the empowering cardio workout where you are totally unleashed.",
   },
   {
     image: cardimage2,
-    time: "10 AM - 11 AM",
-    title: "Yoga Fitness",
+    time: "TUE-THU-SAT, 8AM",
+    title: "Power Yoga",
     description:
       "Whether you're a regular yoga guru or just starting out with the basics.",
   },
   {
     image: cardimage3,
-    time: "4 PM - 6 PM",
+    time: "TUE-THU, 6PM",
     title: "Zumba Fitness",
     description:
       "This is the activity that everyone's been talking about. Fun and engaging!",
