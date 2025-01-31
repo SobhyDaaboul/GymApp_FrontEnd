@@ -235,3 +235,21 @@
   position: relative;
   z-index: 2; /* This ensures the content stays above the overlay */
 }
+
+.daySelectionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.daySelectionContainer .bookButton {
+  width: 100%;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .daySelectionContainer {
+    gap: 8px;
+  }
+}

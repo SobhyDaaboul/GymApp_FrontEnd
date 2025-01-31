@@ -144,19 +144,21 @@
 }
 
 .timeSelect {
-    padding: 10px 15px;
-    border-radius: 20px;
+    padding: 12px 24px;
+    border-radius: 25px;
     border: 2px solid #45ffca;
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
     outline: none;
+    width: 100%;
 }
 
 .timeSelect option {
     background: #1a1a1a;
     color: #ffffff;
+    padding: 10px;
 }
 
 @media (max-width: 768px) {
@@ -199,6 +201,11 @@
 
     .timeSelect {
         width: 100%;
+    }
+
+    .daySelectionContainer,
+    .timeSelectionContainer {
+        gap: 8px;
     }
 }
 
@@ -259,4 +266,22 @@
 .cardContainer > * {
     position: relative;
     z-index: 2;
+}
+
+.daySelectionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.daySelectionContainer .bookButton {
+    width: 100%;
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .daySelectionContainer {
+        gap: 8px;
+    }
 }
