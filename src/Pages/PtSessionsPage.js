@@ -37,7 +37,7 @@ function PtSessionsPage() {
             <PtCard 
                 name="Emily Davis"
                 phone="(555) 456-7890"
-                schedule="Mon-Fri: 6AM-2PM"
+                schedule="Mon-Fri: 8AM-2PM"
                 rate="80"
                 description="Yoga instructor and personal trainer focusing on flexibility, mobility, and mind-body connection."
                 image={pt4Image}
