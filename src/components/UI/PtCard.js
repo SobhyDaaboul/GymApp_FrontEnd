@@ -10,10 +10,8 @@ function PtCard(props) {
 
     // Example available days - you can pass this as a prop instead
     const availableDays = [
-        "Monday - 9:00 AM",
-        "Wednesday - 2:00 PM",
-        "Friday - 5:00 PM",
-        "Saturday - 10:00 AM"
+        "Monday - 7:00 AM",
+        "Saturday - 10:00 PM"
     ];
 
     const handleInitialBooking = (e) => {
