@@ -1,23 +1,37 @@
-import classes from "../../CSS/SignUpForm.module.css";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import classes from "../../CSS/LoginForm.module.css";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import axios from "axios";
 
 function SignUpForm() {
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({
-    username: "",
+    name: "",
+    phoneNumber: "",
     email: "",
     password: "",
   });
+  const [signupData, setSignupData] = useState(null);
+  const [signupResponse, setSignupResponse] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
+  const navigate = useNavigate(); // Initialize navigate
+
+  // Validate form inputs
   const validateForm = () => {
     let valid = true;
-    const newErrors = { username: "", email: "", password: "" };
+    const newErrors = { name: "", phoneNumber: "", email: "", password: "" };
 
-    if (username.length === 0 || username.includes(" ")) {
-      newErrors.username = "Please enter a valid username";
+    if (name.length === 0 || name.includes(" ")) {
+      newErrors.name = "Please enter a valid name";
+      valid = false;
+    }
+
+    if (!/^[0-9]{10}$/.test(phoneNumber)) {
+      newErrors.phoneNumber = "Please enter a valid phone number";
       valid = false;
     }
 
@@ -40,29 +54,73 @@ function SignUpForm() {
     return valid;
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (validateForm()) {
-      console.log({ UserName: username, Email: email, Password: password });
-      // Proceed with form submission or further processing
+      const data = { name, phoneNumber, email, password };
+      setSignupData(data);
     }
   };
+
+  // Submit data to API
+  useEffect(() => {
+    if (signupData) {
+      setIsLoading(true);
+      axios
+        .post("http://localhost:5000/api/member", signupData, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          setSignupResponse(response.data);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            apiError:
+              error.response?.data?.message || "Signup failed. Try again.",
+          }));
+          setIsLoading(false);
+        });
+    }
+  }, [signupData]);
+
+  // Navigate to home page after successful signup
+  useEffect(() => {
+    if (signupResponse) {
+      // Redirect to home page after successful signup
+      navigate("/"); // Change the path if needed
+    }
+  }, [signupResponse, navigate]);
 
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
-        <div className={classes["form-box"] + " " + classes.register}>
+        <div className={classes["form-box"]}>
           <h2>Registration</h2>
           <form onSubmit={handleSubmit}>
             <div className={classes["input-box"]}>
               <input
                 type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
-              <label>Username</label>
-              {errors.username && (
-                <p style={{ color: "red" }}>{errors.username}</p>
+              <label>Name</label>
+              {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
+            </div>
+            <div className={classes["input-box"]}>
+              <input
+                type="text"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+              />
+              <label>Phone Number</label>
+              {errors.phoneNumber && (
+                <p style={{ color: "red" }}>{errors.phoneNumber}</p>
               )}
             </div>
             <div className={classes["input-box"]}>
@@ -85,19 +143,27 @@ function SignUpForm() {
                 <p style={{ color: "red" }}>{errors.password}</p>
               )}
             </div>
-            <Link to="/">
-              <button type="submit" className={classes.btn}>
-                Register
-              </button>
-            </Link>
+            <button type="submit" className={classes.btn} disabled={isLoading}>
+              {isLoading ? "Registering..." : "Register"}
+            </button>
             <div className={classes["login-register"]}>
               <p>
-                Already have an account?{" "}
+                Already have an account?
                 <Link to="/Login" className={classes["login-link"]}>
                   Login
                 </Link>
               </p>
             </div>
+            {errors.apiError && (
+              <p style={{ color: "red", textAlign: "center" }}>
+                {errors.apiError}
+              </p>
+            )}
+            {signupResponse && (
+              <p style={{ color: "green", textAlign: "center" }}>
+                Registration successful! Please log in.
+              </p>
+            )}
           </form>
         </div>
       </div>
