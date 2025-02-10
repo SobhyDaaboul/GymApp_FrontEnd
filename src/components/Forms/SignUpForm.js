@@ -30,7 +30,7 @@ function SignUpForm() {
       valid = false;
     }
 
-    if (!/^[0-9]{10}$/.test(phoneNumber)) {
+    if (!/^[0-9]{8}$/.test(phoneNumber)) {
       newErrors.phoneNumber = "Please enter a valid phone number";
       valid = false;
     }
