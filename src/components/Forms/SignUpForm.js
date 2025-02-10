@@ -69,7 +69,7 @@ function SignUpForm() {
     if (signupData) {
       setIsLoading(true);
       axios
-        .post("http://localhost:5000/api/member", signupData, {
+        .post("http://localhost:5000/api/signup", signupData, {
           headers: {
             "Content-Type": "application/json",
           },

@@ -36,7 +36,7 @@ function LoginForm() {
   useEffect(() => {
     if (loginData) {
       axios
-        .post("https://localhost:5000/api/login", loginData)
+        .post("http://localhost:5000/api/login", loginData)
         .then((response) => {
           setLoginResponse(response.data);
           const { token } = response.data;
@@ -46,7 +46,7 @@ function LoginForm() {
             localStorage.setItem("token", token);
 
             // Navigate to the Home page after successful login
-            navigate("/home");
+            navigate("/");
           }
         })
         .catch((error) => {
