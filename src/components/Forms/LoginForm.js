@@ -8,11 +8,10 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [loginData, setLoginData] = useState(null);
-  const [loginResponse, setLoginResponse] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const navigate = useNavigate(); // Use navigate hook to programmatically navigate
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     const emailValue = e.target.value;
@@ -26,11 +25,13 @@ function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (isValidEmail && password) {
-      setLoginData({ email, password });
-    } else {
+
+    if (!isValidEmail || !password) {
       setErrorMessage("Please enter a valid email and password.");
+      return;
     }
+
+    setLoginData({ email, password });
   };
 
   useEffect(() => {
@@ -38,19 +39,16 @@ function LoginForm() {
       axios
         .post("http://localhost:5000/api/login", loginData)
         .then((response) => {
-          setLoginResponse(response.data);
           const { token } = response.data;
 
           if (token) {
-            // Store the token in localStorage or sessionStorage based on preference
             localStorage.setItem("token", token);
-
-            // Navigate to the Home page after successful login
             navigate("/");
+          } else {
+            setErrorMessage("Failed to receive token");
           }
         })
         .catch((error) => {
-          console.error("Login Error:", error);
           setErrorMessage(
             error.response?.data?.message || "Invalid email or password"
           );
@@ -117,7 +115,6 @@ function LoginForm() {
             </div>
           </form>
 
-          {/* Display error message if login fails */}
           {errorMessage && (
             <p style={{ color: "red", textAlign: "center" }}>{errorMessage}</p>
           )}

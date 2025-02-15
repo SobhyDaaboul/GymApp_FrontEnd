@@ -1,6 +1,6 @@
 import classes from "../../CSS/LoginForm.module.css";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function SignUpForm() {
@@ -18,9 +18,8 @@ function SignUpForm() {
   const [signupResponse, setSignupResponse] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate();
 
-  // Validate form inputs
   const validateForm = () => {
     let valid = true;
     const newErrors = { name: "", phoneNumber: "", email: "", password: "" };
@@ -46,7 +45,7 @@ function SignUpForm() {
       !/[A-Za-z]/.test(password) ||
       !/[@$!%*#?&]/.test(password)
     ) {
-      newErrors.password = "Please enter a valid password";
+      newErrors.password = "Password must contain special character";
       valid = false;
     }
 
@@ -54,7 +53,6 @@ function SignUpForm() {
     return valid;
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -64,7 +62,6 @@ function SignUpForm() {
     }
   };
 
-  // Submit data to API
   useEffect(() => {
     if (signupData) {
       setIsLoading(true);
@@ -89,11 +86,9 @@ function SignUpForm() {
     }
   }, [signupData]);
 
-  // Navigate to home page after successful signup
   useEffect(() => {
     if (signupResponse) {
-      // Redirect to home page after successful signup
-      navigate("/"); // Change the path if needed
+      navigate("/"); // Redirect to home page after successful signup
     }
   }, [signupResponse, navigate]);
 
