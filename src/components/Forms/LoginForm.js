@@ -30,7 +30,7 @@ function LoginForm() {
       setErrorMessage("Please enter a valid email and password.");
       return;
     }
-
+    console.log("Login data before request:", email, password);
     setLoginData({ email, password });
   };
 
@@ -39,16 +39,17 @@ function LoginForm() {
       axios
         .post("http://localhost:5000/api/login", loginData)
         .then((response) => {
-          const { token } = response.data;
+          console.log("API Response:", response.data);
 
-          if (token) {
-            localStorage.setItem("token", token);
+          if (response.data.message === "Login successful") {
+            console.log("Login successful. Redirecting...");
             navigate("/");
           } else {
-            setErrorMessage("Failed to receive token");
+            setErrorMessage("Login failed. Please try again.");
           }
         })
         .catch((error) => {
+          console.log("Login error:", error);
           setErrorMessage(
             error.response?.data?.message || "Invalid email or password"
           );
