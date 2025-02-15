@@ -7,8 +7,9 @@ function ClassCard(props) {
   const [showPopup, setShowPopup] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [showDaySelection, setShowDaySelection] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [memberId, setMemberId] = useState(null);
-  const [classCode, setClassCode] = useState(null);
 
   // Available days for class
   const availableDays = [
@@ -17,29 +18,19 @@ function ClassCard(props) {
     "Friday - 5:00 PM",
     "Saturday - 10:00 AM",
   ];
-
-  // Fetch memberId and classCode from the backend
   useEffect(() => {
-    // Fetch memberId from the backend
-    axios
-      .get("http://localhost:5000/api/get-member-id") // Change this to your actual API endpoint
-      .then((response) => {
-        setMemberId(response.data.memberId); // Assuming the response contains the memberId
-      })
-      .catch((error) => {
-        console.error("Error fetching memberId:", error);
-      });
-
-    // Fetch classCode using the classTitle passed as a prop
-    axios
-      .get(`http://localhost:5000/api/get-class-code/${props.classTitle}`) // Pass classTitle here
-      .then((response) => {
-        setClassCode(response.data.classCode); // Set classCode from the response
-      })
-      .catch((error) => {
-        console.error("Error fetching classCode:", error);
-      });
-  }, [props.classTitle]); // Dependency on classTitle
+    const userEmail = localStorage.getItem("email");
+    if (userEmail) {
+      axios
+        .get("http://localhost:5000/api/getMemberId", { email: userEmail })
+        .then((response) => {
+          setMemberId(response.data.member_id);
+        })
+        .catch((error) => {
+          console.error("Error fetching memberId:", error);
+        });
+    }
+  }, []);
 
   const handleInitialBooking = (e) => {
     e.stopPropagation();
@@ -48,43 +39,32 @@ function ClassCard(props) {
 
   const handleDaySelection = (e, selectedDay) => {
     e.stopPropagation();
-    setIsBooked(true);
+    setSelectedDate(selectedDay);
     setShowDaySelection(false);
-    setShowPopup(true);
+    setLoading(true);
 
-    // Step 4: Call saveBookingInfo API
-    if (memberId && classCode) {
-      SaveBookingInfo(memberId, classCode, selectedDay);
-    }
-
-    setTimeout(() => {
-      setShowPopup(false);
-    }, 3000);
+    axios
+      .post("http://localhost:5000/book-class", {
+        memberId: memberId,
+        classCode: props.classCode,
+      })
+      .then(() => {
+        setIsBooked(true);
+        setShowPopup(true);
+        setTimeout(() => {
+          setShowPopup(false);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error("Error saving booking:", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   const handleCardClick = () => {
     setIsExpanded(!isExpanded);
-  };
-
-  // Save booking info to backend
-  const SaveBookingInfo = (memberId, classCode, selectedDay) => {
-    useEffect(() => {
-      if (memberId && classCode && selectedDay) {
-        // Save booking info to backend
-        axios
-          .post("http://localhost:5000/api/save-booking", {
-            memberId: memberId,
-            classCode: classCode,
-            selectedDay: selectedDay,
-          })
-          .then((response) => {
-            console.log("Booking saved successfully:", response);
-          })
-          .catch((error) => {
-            console.error("Error saving booking:", error);
-          });
-      }
-    }, [memberId, classCode, selectedDay]);
   };
 
   const cardClasses = `${classes.cardContainer} ${classes[props.classType]} 

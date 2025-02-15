@@ -39,6 +39,7 @@ function LoginForm() {
       axios
         .post("http://localhost:5000/api/login", loginData)
         .then((response) => {
+          localStorage.setItem(loginData.email);
           console.log("API Response:", response.data);
 
           if (response.data.message === "Login successful") {
