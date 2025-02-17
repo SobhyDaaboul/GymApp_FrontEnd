@@ -1,5 +1,5 @@
 import classes from "../../CSS/LoginForm.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -7,7 +7,6 @@ function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(false);
-  const [loginData, setLoginData] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
@@ -16,47 +15,42 @@ function LoginForm() {
   const handleEmailChange = (e) => {
     const emailValue = e.target.value;
     setEmail(emailValue);
-    setIsValidEmail(emailValue.includes("@") && emailValue.includes("."));
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsValidEmail(emailRegex.test(emailValue));
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!isValidEmail || !password) {
       setErrorMessage("Please enter a valid email and password.");
       return;
     }
-    console.log("Login data before request:", email, password);
-    setLoginData({ email, password });
-  };
 
-  useEffect(() => {
-    if (loginData) {
-      axios
-        .post("http://localhost:5000/api/login", loginData)
-        .then((response) => {
-          localStorage.setItem(loginData.email);
-          console.log("API Response:", response.data);
+    try {
+      const response = await axios.post("http://localhost:5000/api/login", {
+        email,
+        password,
+      });
 
-          if (response.data.message === "Login successful") {
-            console.log("Login successful. Redirecting...");
-            navigate("/");
-          } else {
-            setErrorMessage("Login failed. Please try again.");
-          }
-        })
-        .catch((error) => {
-          console.log("Login error:", error);
-          setErrorMessage(
-            error.response?.data?.message || "Invalid email or password"
-          );
-        });
+      console.log("API Response:", response.data);
+
+      if (response.data.message === "Login successful") {
+        navigate("/");
+      } else {
+        setErrorMessage("Login failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      setErrorMessage(
+        error.response?.data?.message || "Invalid email or password."
+      );
     }
-  }, [loginData, navigate]);
+  };
 
   return (
     <div className={classes.container}>
@@ -79,12 +73,15 @@ function LoginForm() {
               />
               {!isValidEmail && email && (
                 <small style={{ color: "red" }}>
-                  Email must contain @ and .
+                  Email must be valid (e.g., user@example.com)
                 </small>
               )}
               <label>Email</label>
             </div>
-            <div className={classes["input-box"]}>
+            <div
+              className={classes["input-box"]}
+              style={{ position: "relative" }}
+            >
               <input
                 type={showPassword ? "text" : "password"}
                 required
@@ -95,16 +92,20 @@ function LoginForm() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                style={{ background: "transparent", border: "none" }}
+                style={{
+                  background: "transparent",
+                  border: "none",
+                  position: "absolute",
+                  right: "10px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  cursor: "pointer",
+                }}
               >
                 {showPassword ? "Hide" : "Show"}
               </button>
             </div>
-            <button
-              type="submit"
-              className={classes.btn}
-              disabled={!isValidEmail || !password}
-            >
+            <button type="submit" className={classes.btn}>
               Login
             </button>
             <div className={classes["login-register"]}>
