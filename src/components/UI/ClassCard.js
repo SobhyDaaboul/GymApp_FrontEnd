@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"; // Use to extract params from the URL
 import axios from "axios";
 import classes from "../../CSS/ClassCard.module.css";
 
@@ -6,60 +7,49 @@ function ClassCard(props) {
   const [isBooked, setIsBooked] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [showDaySelection, setShowDaySelection] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [memberId, setMemberId] = useState(null);
+  const [class_code, setClassCode] = useState(null);
 
-  // Available days for class
-  const availableDays = [
-    "Monday - 9:00 AM",
-    "Wednesday - 2:00 PM",
-    "Friday - 5:00 PM",
-    "Saturday - 10:00 AM",
-  ];
+  const { member_id } = useParams(); // Keep for member_id if needed
+  const { class_name } = props; // class_name comes from props
+
   useEffect(() => {
-    const userEmail = localStorage.getItem("email");
-    if (userEmail) {
-      axios
-        .get("http://localhost:5000/api/getMemberId", { email: userEmail })
-        .then((response) => {
-          setMemberId(response.data.member_id);
-        })
-        .catch((error) => {
-          console.error("Error fetching memberId:", error);
-        });
+    const fetchClassCode = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/api/get-class-code/${class_name}`
+        );
+        setClassCode(response.data.class_code);
+      } catch (error) {
+        console.error("Error fetching class code:", error);
+        setClassCode(null);
+      }
+    };
+
+    if (class_name) {
+      fetchClassCode();
     }
-  }, []);
+  }, [class_name]);
 
-  const handleInitialBooking = (e) => {
+  const handleInitialBooking = (e, class_code, member_id) => {
     e.stopPropagation();
-    setShowDaySelection(true);
-  };
-
-  const handleDaySelection = (e, selectedDay) => {
-    e.stopPropagation();
-    setSelectedDate(selectedDay);
-    setShowDaySelection(false);
-    setLoading(true);
+    if (!class_code || !member_id) {
+      console.warn("Missing class_code or member_id.");
+      return;
+    }
 
     axios
-      .post("http://localhost:5000/book-class", {
-        memberId: memberId,
-        classCode: props.classCode,
+      .post("http://localhost:5000/api/book-class", {
+        memberId: member_id,
+        class_code: class_code,
       })
-      .then(() => {
+      .then((response) => {
+        console.log(response);
         setIsBooked(true);
         setShowPopup(true);
-        setTimeout(() => {
-          setShowPopup(false);
-        }, 3000);
+        setTimeout(() => setShowPopup(false), 3000);
       })
       .catch((error) => {
         console.error("Error saving booking:", error);
-      })
-      .finally(() => {
-        setLoading(false);
       });
   };
 
@@ -67,10 +57,11 @@ function ClassCard(props) {
     setIsExpanded(!isExpanded);
   };
 
-  const cardClasses = `${classes.cardContainer} ${classes[props.classType]} 
-        ${showPopup ? classes.transparent : ""} 
-        ${isExpanded ? classes.expanded : ""} 
-        ${isExpanded && props.backgroundImage ? classes.withBackground : ""}`;
+  const cardClasses = `${classes.cardContainer} 
+    ${props.classType ? classes[props.classType] : ""} 
+    ${showPopup ? classes.transparent : ""} 
+    ${isExpanded ? classes.expanded : ""} 
+    ${isExpanded && props.backgroundImage ? classes.withBackground : ""}`;
 
   return (
     <div
@@ -89,9 +80,11 @@ function ClassCard(props) {
       {showPopup && (
         <div className={classes.popup}>Class Successfully Booked!</div>
       )}
+
       <div className={classes.cardHeader}>
         <h1 className={classes.cardTitle}>{props.title}</h1>
       </div>
+
       <div
         className={`${classes.cardContent} ${isExpanded ? classes.show : ""}`}
       >
@@ -110,32 +103,17 @@ function ClassCard(props) {
           </div>
         </div>
       </div>
+
       <div
         className={`${classes.buttonWrapper} ${isExpanded ? classes.show : ""}`}
       >
-        {!showDaySelection ? (
-          <button
-            className={`${classes.bookButton} ${
-              isBooked ? classes.booked : ""
-            }`}
-            onClick={handleInitialBooking}
-            disabled={isBooked}
-          >
-            {isBooked ? "Booked" : "Book Class"}
-          </button>
-        ) : (
-          <div className={classes.daySelectionContainer}>
-            {availableDays.map((day, index) => (
-              <button
-                key={index}
-                className={classes.bookButton}
-                onClick={(e) => handleDaySelection(e, day)}
-              >
-                {day}
-              </button>
-            ))}
-          </div>
-        )}
+        <button
+          className={`${classes.bookButton} ${isBooked ? classes.booked : ""}`}
+          onClick={(e) => handleInitialBooking(e, class_code, member_id)}
+          disabled={isBooked}
+        >
+          {isBooked ? "Booked" : "Book Class"}
+        </button>
       </div>
     </div>
   );
