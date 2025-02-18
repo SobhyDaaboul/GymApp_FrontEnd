@@ -1,13 +1,13 @@
-import styles from '../../CSS/MovingText.module.css';
+import styles from "../../CSS/MovingText.module.css";
 
-function MovingText (){
+function MovingText() {
   return (
     <div className={styles.movingTextContainer}>
       <div className={styles.movingText}>
-        Welcome to our gym! We are open from Monday till Saturday
+        Welcome to our gym! We are open from Monday till Sunday
       </div>
     </div>
   );
-};
+}
 
 export default MovingText;
