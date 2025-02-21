@@ -8,34 +8,27 @@ function SignUpForm() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({
-    name: "",
-    phoneNumber: "",
-    email: "",
-    password: "",
-  });
-  const [signupData, setSignupData] = useState(null);
-  const [signupResponse, setSignupResponse] = useState(null);
+  const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const validateForm = () => {
     let valid = true;
-    const newErrors = { name: "", phoneNumber: "", email: "", password: "" };
+    const newErrors = {};
 
-    if (name.length === 0 || name.includes(" ")) {
-      newErrors.name = "Please enter a valid name";
+    if (!/^[A-Za-z\s]+$/.test(name)) {
+      newErrors.name = "Name must contain only letters and spaces";
       valid = false;
     }
 
-    if (!/^[0-9]{8}$/.test(phoneNumber)) {
-      newErrors.phoneNumber = "Please enter a valid phone number";
+    if (!/^\d{8,15}$/.test(phoneNumber)) {
+      newErrors.phoneNumber = "Enter a valid phone number (8-15 digits)";
       valid = false;
     }
 
-    if (!email.includes("@") || !email.includes(".")) {
-      newErrors.email = "Please enter a valid email address";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "Enter a valid email address";
       valid = false;
     }
 
@@ -45,7 +38,8 @@ function SignUpForm() {
       !/[A-Za-z]/.test(password) ||
       !/[@$!%*#?&]/.test(password)
     ) {
-      newErrors.password = "Password must contain special character";
+      newErrors.password =
+        "Password must be at least 8 characters, include a number, a letter, and a special character";
       valid = false;
     }
 
@@ -53,44 +47,37 @@ function SignUpForm() {
     return valid;
   };
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (isLoading) {
+      // You can perform a side effect or log some info here when loading is true.
+      console.log("Submitting form...");
+    }
+  }, [isLoading]); // Effect will run when isLoading state changes.
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
 
-    if (validateForm()) {
-      const data = { name, phoneNumber, email, password };
-      setSignupData(data);
+    setIsLoading(true);
+    try {
+      // Send plain password to the backend. The backend will hash it.
+      await axios.post("http://localhost:5000/api/signup", {
+        name,
+        phoneNumber,
+        email,
+        password, // Send plain password
+      });
+
+      alert("Signup successful! You can now log in.");
+      navigate("/Login");
+    } catch (error) {
+      setErrors({
+        apiError:
+          error.response?.data?.message || "Signup failed. Please try again.",
+      });
     }
+    setIsLoading(false);
   };
-
-  useEffect(() => {
-    if (signupData) {
-      setIsLoading(true);
-      axios
-        .post("http://localhost:5000/api/signup", signupData, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        .then((response) => {
-          setSignupResponse(response.data);
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          setErrors((prevErrors) => ({
-            ...prevErrors,
-            apiError:
-              error.response?.data?.message || "Signup failed. Try again.",
-          }));
-          setIsLoading(false);
-        });
-    }
-  }, [signupData]);
-
-  useEffect(() => {
-    if (signupResponse) {
-      navigate("/"); // Redirect to home page after successful signup
-    }
-  }, [signupResponse, navigate]);
 
   return (
     <div className={classes.container}>
@@ -152,11 +139,6 @@ function SignUpForm() {
             {errors.apiError && (
               <p style={{ color: "red", textAlign: "center" }}>
                 {errors.apiError}
-              </p>
-            )}
-            {signupResponse && (
-              <p style={{ color: "green", textAlign: "center" }}>
-                Registration successful! Please log in.
               </p>
             )}
           </form>

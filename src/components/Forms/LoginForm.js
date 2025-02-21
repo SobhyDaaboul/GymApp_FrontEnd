@@ -39,8 +39,16 @@ function LoginForm() {
 
       console.log("API Response:", response.data);
 
-      if (response.data.message === "Login successful") {
+      if (response.data.token) {
+        // **Store token in localStorage**
+        localStorage.setItem("token", response.data.token);
+
+        // Redirect to home page
         navigate("/");
+
+        // Optional: Decode JWT for user info (if needed)
+        // const decodedToken = jwtDecode(response.data.token);
+        // console.log("Decoded User Info:", decodedToken);
       } else {
         setErrorMessage("Login failed. Please try again.");
       }
