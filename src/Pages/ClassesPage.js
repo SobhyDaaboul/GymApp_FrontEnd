@@ -9,7 +9,8 @@ function ClassesPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/class")
+    axios
+      .get("http://localhost:5000/api/class/getclasses") //Akal
       .then((response) => {
         console.log("Classes data:", response.data);
         setClasses(response.data);
@@ -22,8 +23,18 @@ function ClassesPage() {
       });
   }, []);
 
-  if (loading) return <Layout><div>Loading...</div></Layout>;
-  if (error) return <Layout><div>Error loading classes!</div></Layout>;
+  if (loading)
+    return (
+      <Layout>
+        <div>Loading...</div>
+      </Layout>
+    );
+  if (error)
+    return (
+      <Layout>
+        <div>Error loading classes!</div>
+      </Layout>
+    );
 
   return (
     <Layout>
@@ -34,7 +45,11 @@ function ClassesPage() {
           schedule={classItem.schedule}
           duration={classItem.duration}
           price={classItem.price}
-          backgroundImage={classItem.image ? `http://localhost:5000/uploads/${classItem.image}` : '/default-class.png'}
+          backgroundImage={
+            classItem.image
+              ? `http://localhost:5000/uploads/${classItem.image}`
+              : "/default-class.png"
+          }
         />
       ))}
     </Layout>
