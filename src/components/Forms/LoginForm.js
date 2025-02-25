@@ -1,7 +1,8 @@
-import classes from "../../CSS/LoginForm.module.css";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useState } from "react";
+
+import classes from "../../CSS/LoginForm.module.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -19,17 +20,13 @@ function LoginForm() {
     setIsValidEmail(emailRegex.test(emailValue));
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  const handlePasswordChange = (e) => setPassword(e.target.value);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!isValidEmail || !password) {
-      setErrorMessage("Please enter a valid email and password.");
-      return;
-    }
+    if (!isValidEmail || !password)
+      return setErrorMessage("Please enter a valid email and password.");
 
     try {
       const response = await axios.post("http://localhost:5000/api/login", {
@@ -37,23 +34,14 @@ function LoginForm() {
         password,
       });
 
-      console.log("API Response:", response.data);
-
       if (response.data.token) {
-        // **Store token in localStorage**
         localStorage.setItem("token", response.data.token);
 
-        // Redirect to home page
         navigate("/");
-
-        // Optional: Decode JWT for user info (if needed)
-        // const decodedToken = jwtDecode(response.data.token);
-        // console.log("Decoded User Info:", decodedToken);
       } else {
         setErrorMessage("Login failed. Please try again.");
       }
     } catch (error) {
-      console.error("Login error:", error);
       setErrorMessage(
         error.response?.data?.message || "Invalid email or password."
       );

@@ -128,21 +128,7 @@ function PaymentForm({ userData }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!paymentMethod) {
-      alert("Please select a payment method");
-      return;
-    }
-
-    // Handle payment processing based on selected method
-    if (paymentMethod === "cash") {
-      // Process cash payment
-      console.log("Processing cash payment...");
-      // Add cash payment logic here
-    } else if (paymentMethod === "credit") {
-      // Process credit card payment
-      console.log("Processing credit card payment...");
-      // Add credit card payment logic here
-    }
+    if (!paymentMethod) return alert("Please select a payment method");
   };
 
   return (

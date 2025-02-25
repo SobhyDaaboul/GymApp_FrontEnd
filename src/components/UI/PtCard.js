@@ -1,4 +1,6 @@
 import { useState } from "react";
+import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 import classes from "../../CSS/PtCard.module.css";
 
 function PtCard(props) {

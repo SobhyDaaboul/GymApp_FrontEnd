@@ -9,9 +9,9 @@ function PtSessionsPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/employee")
+    axios
+      .get("http://localhost:5000/api/employee")
       .then((response) => {
-        console.log("Employee data:", response.data);
         setEmployees(response.data);
         setLoading(false);
       })
@@ -22,8 +22,18 @@ function PtSessionsPage() {
       });
   }, []);
 
-  if (loading) return <Layout><div>Loading...</div></Layout>;
-  if (error) return <Layout><div>Error loading trainers!</div></Layout>;
+  if (loading)
+    return (
+      <Layout>
+        <div>Loading...</div>
+      </Layout>
+    );
+  if (error)
+    return (
+      <Layout>
+        <div>Error loading trainers!</div>
+      </Layout>
+    );
 
   return (
     <Layout>
@@ -36,7 +46,11 @@ function PtSessionsPage() {
           schedule={employee.schedule}
           rate={employee.rate}
           description={employee.description}
-          image={employee.image ? `http://localhost:5000/uploads/${employee.image}` : '/default-profile.png'}
+          image={
+            employee.image
+              ? `http://localhost:5000/uploads/${employee.image}`
+              : "/default-profile.png"
+          }
         />
       ))}
     </Layout>

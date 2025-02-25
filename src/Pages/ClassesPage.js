@@ -12,7 +12,6 @@ function ClassesPage() {
     axios
       .get("http://localhost:5000/api/class/getclasses") //Akal
       .then((response) => {
-        console.log("Classes data:", response.data);
         setClasses(response.data);
         setLoading(false);
       })
@@ -40,7 +39,8 @@ function ClassesPage() {
     <Layout>
       {classes.map((classItem) => (
         <ClassCard
-          key={classItem.classCode}
+          key={classItem.classCode} // Used by React, not accessible in ClassCard
+          classCode={classItem.classCode} // Explicitly pass classCode as a prop
           title={classItem.className}
           schedule={classItem.schedule}
           duration={classItem.duration}

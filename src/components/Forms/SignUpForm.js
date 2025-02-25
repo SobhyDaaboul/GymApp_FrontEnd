@@ -47,13 +47,6 @@ function SignUpForm() {
     return valid;
   };
 
-  useEffect(() => {
-    if (isLoading) {
-      // You can perform a side effect or log some info here when loading is true.
-      console.log("Submitting form...");
-    }
-  }, [isLoading]); // Effect will run when isLoading state changes.
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
