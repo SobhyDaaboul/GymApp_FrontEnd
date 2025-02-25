@@ -41,6 +41,7 @@ function PtSessionsPage() {
         <PtCard
           key={employee.idemployee}
           id={employee.idemployee}
+          sessionCode={employee.sessionCode}
           name={employee.name}
           phone={employee.phoneNumber}
           schedule={employee.schedule}

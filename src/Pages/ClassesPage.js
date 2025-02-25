@@ -39,7 +39,7 @@ function ClassesPage() {
     <Layout>
       {classes.map((classItem) => (
         <ClassCard
-          key={classItem.classCode} // Used by React, not accessible in ClassCard
+          key={classItem.classID} // Used by React, not accessible in ClassCard
           classCode={classItem.classCode} // Explicitly pass classCode as a prop
           title={classItem.className}
           schedule={classItem.schedule}
