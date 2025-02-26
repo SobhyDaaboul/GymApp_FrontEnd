@@ -56,8 +56,6 @@ function MembershipForm() {
       status: "active",
     };
 
-    console.log(membershipData);
-
     try {
       const response = await axios.post(
         "http://localhost:5000/api/membership/create",
@@ -74,11 +72,7 @@ function MembershipForm() {
         setShowPayment(true);
       }
     } catch (error) {
-      console.error(
-        "Error creating membership:",
-        error.response?.data || error
-      );
-      alert("Failed to create membership.");
+      alert("Failed to create membership.You already hava a Membership!");
     }
   };
 
@@ -89,8 +83,10 @@ function MembershipForm() {
       [name]: value,
     }));
   };
+  const userDataSend = [formData.memberId, formData.username];
+  console.log("frommembership", userDataSend);
 
-  if (showPayment) return <PaymentForm userData={formData} />;
+  if (showPayment) return <PaymentForm userData={userDataSend} />;
 
   return (
     <div className={classes.container}>

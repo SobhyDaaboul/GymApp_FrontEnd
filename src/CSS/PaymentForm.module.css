@@ -146,3 +146,19 @@
     gap: 0.5rem;
   }
 }
+
+.okButton {
+  display: center;
+  background-color: #45ffca;
+  color: #000; /* Change this if needed for better contrast */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.okButton:hover {
+  background-color: #38e6b3;
+}
